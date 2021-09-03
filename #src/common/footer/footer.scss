@@ -1,0 +1,159 @@
+.footer {
+    background-color: $bgColor;
+    padding: 95px 0 190px;
+
+    @media (max-width: $md3+px) {
+        padding: 50px 0;
+    }
+
+    &__body {
+        color: $textColorLight;
+    }
+
+    &__row-1 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 145px;
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 80px;
+        }
+        @media (max-width: $md3+px) {
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 575.98px) {
+            display: block;
+        }
+    }
+
+    &__row-2 {
+    }
+
+    &__col {
+        flex: 1 1 auto;
+        min-width: 160px;
+        margin-bottom: 60px;
+        &:not(:last-child) {
+            padding-right: 20px;
+        }
+
+        @media (max-width: $md2+px) {
+            max-width: none;
+        }
+
+        @media (max-width: 575.98px) {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__col-1 {
+    }
+    &__col-2 {
+        max-width: 257px;
+        padding-top: 4px;
+    }
+    &__col-3 {
+        max-width: 226px;
+        padding-top: 4px;
+    }
+
+    &__col-4 {
+        max-width: 185px;
+        padding-top: 4px;
+    }
+    &__col-5 {
+        max-width: 249px;
+        & .social {
+            justify-content: center;
+            margin-right: 17px;
+        }
+    }
+
+    &__logo {
+        width: 100%;
+        max-width: 190px;
+
+        & img {
+            width: 100%;
+        }
+
+        @media (max-width: 575.98px) {
+            margin: 0 auto;
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        color: $textColorLight;
+        transition: all 0.3s ease;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+
+    &__list {
+    }
+
+    &__link {
+        color: $textColorLight;
+        transition: all 0.3s ease;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: -0.204545px;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: -0.204545px;
+        text-align: center;
+    }
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > li {
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+
+        &:not(:last-child) {
+            margin-right: 48px;
+        }
+
+        & > a {
+            display: block;
+            height: 21px;
+
+            & svg,
+            & img {
+                height: 100%;
+                width: auto;
+            }
+
+            & svg path {
+                transition: all 0.3s ease;
+            }
+
+            @media (min-width: 992px) {
+                &:hover {
+                    & svg path {
+                        fill: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+}

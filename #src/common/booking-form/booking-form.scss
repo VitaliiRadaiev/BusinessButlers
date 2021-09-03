@@ -1,0 +1,235 @@
+.booking-form-wrap {
+    background-color: $mainColor;
+    padding: 85px 0;
+
+    @media (max-width: $md3+px) {
+        padding: 50px 0;
+    }
+}
+
+.booking-form {
+    background: #fcfdff;
+    border-radius: 100px;
+    padding: 34px 58px 50px 62px;
+
+    @media (max-width: 575.98px) {
+        padding: 34px 30px 50px;
+        border-radius: 50px;
+    }
+
+    &.booking-form_dark {
+        background-color: $bgColor;
+        box-shadow: 4px 14px 30px rgba(0, 0, 0, 0.35);
+        & .booking-form__label {
+            color: $textColorLight;
+
+            & > strong {
+                color: $textColorLight;
+            }
+        }
+
+        & .booking-form__radio input[type=radio]:checked ~ .booking-form__radio-icon {
+            background-color: $mainColor;
+        }
+
+        & .booking-form__radio-subtext {
+            color: $textColorLight;
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: flex-end;
+        margin: 0 -3.5px;
+
+        @media (max-width: 1324px) {
+            flex-wrap: wrap;
+            align-items: unset;
+        }
+    }
+
+    &__item {
+        flex: 0 1 25%;
+        padding: 0 3.5px;
+        margin-bottom: 7px;
+        position: relative;
+
+        @media (max-width: 1324px) {
+            flex: 0 1 50%;
+            height: auto;
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+
+            &:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+
+                & .booking-form__input {
+                    margin-top: auto;
+                }
+            }
+
+            &:last-child {
+                flex: 0 1 100%;
+            }
+        }
+
+        @media (max-width: $md3+px) {
+            flex: 0 1 100%;
+        }
+
+        &.size {
+
+            & .booking-form__radio-subtext {
+
+                @media (min-width: 768px) {
+                    width: calc(100% + 20px);
+                }
+            }
+        }
+
+        &.speed {
+
+            & .booking-form__radio {
+                &:not(:first-child) {
+                    margin-left: -9px;
+                }
+            }
+
+
+        }
+
+        & .btn-default {
+            width: 100%;
+        }
+    }
+
+    &__label {
+        font-size: 15px;
+        line-height: 149%;
+        color: #949494;
+        margin-bottom: 16px;
+
+        & > strong {
+            font-weight: 800;
+            color: $textColor;
+        }
+    }
+
+    &__input {
+        background-color: #fff;
+        border: 1px solid #949494;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0 47px;
+        position: relative;
+
+        & img {
+            height: 24px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        & input {
+            width: 100%;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 149%;
+            color: $textColor;
+            background-color: transparent;
+
+            &::placeholder {
+                color: #858d8f;
+                font-weight: 300;
+                font-size: 15px;
+                line-height: 149%;
+            }
+        }
+    }
+
+    &__radio-group {
+        border: 1px solid #858d8f;
+        border-radius: 100px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        background-color: #fff;
+    }
+
+    &__radio {
+        height: 54px;
+        flex: 0 0 62px;
+        cursor: pointer;
+
+        & input[type="radio"] {
+            display: none;
+
+            &:checked ~ .booking-form__radio-icon {
+                background-color: $textColor;
+
+                & svg path {
+                    fill: #fff;
+                }
+            }
+        }
+
+        & img,
+        & svg {
+            max-width: 100%;
+            max-height: 22px;
+            width: auto;
+            height: auto;
+        }
+
+        & svg {
+            & path {
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    &__radio-icon {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        border-radius: 100px;
+        transition: all 0.3s ease;
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: rgba($textColor, 0.1);
+            }
+        }
+    }
+
+    &__radio-subtext {
+        position: absolute;
+        top: calc(100% + 8.5px);
+        width: 100%;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 149%;
+        text-align: center;
+        color: #04172f;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (max-width: 1324px) {
+            position: static;
+            transform: translate(0, 0);
+            margin-top: 8.5px;
+        }
+    }
+}

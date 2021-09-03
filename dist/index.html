@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New Project</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.is-load ._preload-body:before {
+			display: none;
+		}
+		
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+	<div class="_preload-body"></div>
+	<!-- == TOP LINE ================== -->
+	<header class="header">
+    <div class="header__body container-lg">
+        <div class="header__logo logo">
+            <a href="#">
+                <img class="img-svg" src="img/logo/logo.png" alt="logo">
+            </a>
+        </div>
+        <nav class="header__menu menu">
+            <ul class="menu__list">
+                <li>
+                    <a href="#" class="menu__link hover current-menu-item">Size</a>
+                </li>
+                <li>
+                    <a href="#" class="menu__link hover">Speed</a>
+                </li>
+                <li>
+                    <a href="#" class="menu__link hover">Booking</a>
+                </li>
+            </ul>
+        </nav>
+        <a href="tel:1800961373" class="header__phone hover">+1800 961 373</a>
+        <a href="#" class="header__btn btn-default">Book now </a>
+        <div class="header__burger">
+            <div class="burger-wrap">
+                <div class="burger" data-activEl="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div> 
+    </div>
+</header>
+
+	<!-- == // TOP LINE ================== -->
+
+
+	<main class="_page home-page">
+		<section class="promo-header _padding-top">
+			<div class="promo-header__bg">
+				<div class="container-lg">
+					<img src="img/photo/promo-header-bg.svg" alt="">
+				</div>
+				<div class="promo-header__bg-bottom">
+					<img src="img/photo/promo-header-bottom-decor.svg" alt="">
+				</div>
+			</div>
+			<div class="container-lg">
+				<div class="promo-header__body">
+					<div class="promo-header__col-1">
+						<h1 class="promo-header__title">
+							Same Day
+							Couriers
+							You Can
+							Trust
+						</h1>
+						<div class="promo-header__subtitle">
+							5-star courier services
+							from start to finish
+						</div>
+						<a href="#" class="promo-header__logo">
+							<img src="img/photo/header-logo.png" alt="">
+						</a>
+					</div>
+					<div class="promo-header__col-2">
+						<div class="promo-header__img">
+							<img src="img/photo/promo-header-img.png" alt="">
+						</div>
+					</div>
+				</div>
+
+
+				<form action="#" class="booking-form">
+					<div class="booking-form__body">
+						<div class="booking-form__item">
+							<div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+							<div class="booking-form__input">
+								<img src="img/icons/location-form-icon.svg" alt="">
+								<input type="text" placeholder="Pickup Address">
+							</div>
+						</div>
+						<div class="booking-form__item">
+							<div class="booking-form__input">
+								<img src="img/icons/location-form-icon.svg" alt="">
+								<input type="text" placeholder="Delivery Address">
+							</div>
+						</div>
+						<div class="booking-form__item size">
+							<div class="booking-form__label text-center">Size</div>
+							<div class="booking-form__radio-group">
+								<label class="booking-form__radio">
+									<input type="radio" name="size">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="size">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="size" checked>
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+									</div>
+								</label>
+							</div>
+							<div class="booking-form__radio-subtext">
+								Fits into a truck: Furniture, Construction Material, Shipping Pallets
+							</div>
+						</div>
+						<div class="booking-form__item speed">
+							<div class="booking-form__label text-center">Speed</div>
+							<div class="booking-form__radio-group">
+								<label class="booking-form__radio">
+									<input type="radio" name="speed">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="speed">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="speed">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="speed" checked>
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+									</div>
+								</label>
+							</div>
+							<div class="booking-form__radio-subtext">
+								Within 3-4 hours, if ordered before 2 pm
+							</div>
+						</div>
+						<div class="booking-form__item">
+							<button class="btn-default" type="submit">Confirm Booking</button>
+						</div>
+					</div>
+				</form>
+
+				<div class="promo-header__bottom">
+					<div class="promo-header__bottom-col-1">
+						<img src="img/photo/promo-header-img-2.png" alt="">
+					</div>
+					<div class="promo-header__bottom-col-2">
+						<div class="promo-header__text-wrap">
+							<h2 class="promo-header__title-2 title-2">What We Do Best</h2>
+							<div class="promo-header__text text">
+								Business Butlers is a same day courier service across the Melbourne Metropolitan area.
+								We specialise in providing professionals and businesses with a reliable and fast courier
+								service.
+								We have a range of vehicle sizes and delivery timeframes to accommodate any customer.
+								Professionalism & customer service are the foundation of how we approach every courier
+								delivery.
+							</div>
+							<a href="#" class="btn-default">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="info-delivering-sizes">
+			<div class="container-md">
+				<h2 class="info-delivering-sizes__title title-2">Delivering Items of All Sizes</h2>
+				<ul class="info-delivering-sizes__list">
+					<li>
+						<div class="info-delivering-sizes__top-icon">
+							<img src="img/icons/size-icon-strong-1.svg" alt="">
+						</div>
+						<div class="info-delivering-sizes__item-title">
+							Car Sized <strong>Deliveries</strong>
+						</div>
+						<div class="info-delivering-sizes__text text">
+							Our car courier service is ideal for small items that you need to deliver in a fast and
+							reliable manner. We offer a range of delivery timeframes, all of which are handled by our
+							professional couriers.
+						</div>
+						<div class="info-delivering-sizes__item-title-2"> Delivery Timeframes</div>
+						<div class="info-delivering-sizes__timaframes">
+							<div class="info-delivering-sizes__timaframes-item">
+								<span>
+									<img src="img/icons/speed-icon-1.svg" alt="">
+									Same day
+								</span>
+								End of business day
+							</div>
+							<div class="info-delivering-sizes__timaframes-item">
+								<span>
+									<img src="img/icons/speed-icon-2.svg" alt="">
+									Priority
+								</span>
+								Within 4 hours
+							</div>
+							<div class="info-delivering-sizes__timaframes-item">
+								<span>
+									<img src="img/icons/speed-icon-3.svg" alt="">
+									Express
+								</span>
+								Within 2 hours
+							</div>
+							<div class="info-delivering-sizes__timaframes-item">
+								<span>
+									<img src="img/icons/speed-icon-4.svg" alt="">
+									Next day delivery
+								</span>
+							</div>
+						</div>
+
+						<div class="info-delivering-sizes__item-title-2">Perfect for</div>
+						<div class="info-delivering-sizes__perfectfor">
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-1.svg" alt="">
+								Documents
+							</div>
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-2.svg" alt="">
+								Keys
+							</div>
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-3.svg" alt="">
+								Computers
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="info-delivering-sizes__top-icon">
+							<img src="img/icons/size-icon-strong-2.svg" alt="">
+						</div>
+						<div class="info-delivering-sizes__item-title">
+							Van Sized <strong>Deliveries</strong>
+						</div>
+						<div class="info-delivering-sizes__text text">
+							If the item you need to send is too big for a car, our van courier services in Melbourne can
+							help. We will ensure your items reach their destination on time with our next day delivery
+							service.
+						</div>
+						<div class="info-delivering-sizes__item-title-2"> Delivery Timeframes</div>
+						<div class="info-delivering-sizes__timaframes">
+							<div class="info-delivering-sizes__timaframes-item">
+								<span>
+									<img src="img/icons/speed-icon-4.svg" alt="">
+									Next day delivery
+								</span>
+							</div>
+						</div>
+
+						<div class="info-delivering-sizes__item-title-2">Perfect for</div>
+						<div class="info-delivering-sizes__perfectfor">
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-3.svg" alt="">
+								Office Chairs
+							</div>
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-4.svg" alt="">
+								Art
+							</div>
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-5.svg" alt="">
+								Multiple Gift Hampers
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="info-delivering-sizes__top-icon">
+							<img src="img/icons/size-icon-strong-3.svg" alt="">
+						</div>
+						<div class="info-delivering-sizes__item-title">
+							Truck Sized <strong>Deliveries</strong>
+						</div>
+						<div class="info-delivering-sizes__text text">
+							Our truck courier service is perfect for larger items that don’t fit in a van or car. Our
+							professional truck drivers will deliver your oversized items the very next day and save you
+							the hassle of dealing with slow & unfriendly logistics companies.
+						</div>
+						<div class="info-delivering-sizes__item-title-2"> Delivery Timeframes</div>
+						<div class="info-delivering-sizes__timaframes">
+							<div class="info-delivering-sizes__timaframes-item">
+								<span>
+									<img src="img/icons/speed-icon-4.svg" alt="">
+									Next day delivery
+								</span>
+							</div>
+						</div>
+
+						<div class="info-delivering-sizes__item-title-2">Perfect for</div>
+						<div class="info-delivering-sizes__perfectfor">
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-7.svg" alt="">
+								Furniture
+							</div>
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-8.svg" alt="">
+								Shipping Pallets
+							</div>
+							<div class="info-delivering-sizes__perfectfor-item">
+								<img src="img/icons/baggage-icon-9.svg" alt="">
+								Construction Material
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="advantages">
+			<div class="advantages__bg">
+				<div class="advantages__bg-top">
+					<img src="img/photo/advantages-bg-top.svg" alt="">
+				</div>
+				<div class="advantages__bg-bottom">
+					<img src="img/photo/advantages-bg-bottom.svg" alt="">
+				</div>
+			</div>
+			<div class="advantages__body container-sm">
+				<h2 class="advantages__title title-2"> Why Customers Choose Us</h2>
+				<ul class="advantages__list">
+					<li>
+						<div class="advantages__icon">
+							<img src="img/icons/advantages-icon-1.svg" alt="">
+						</div>
+						<div class="advantages__item-title">Professional</div>
+						<div class="advantages__text text">
+							We provide a professional service from start to finish.
+						</div>
+					</li>
+					<li>
+						<div class="advantages__icon">
+							<img src="img/icons/advantages-icon-2.svg" alt="">
+						</div>
+						<div class="advantages__item-title">Customer Focused</div>
+						<div class="advantages__text text">
+							We answer the phone instantly, no robots and no waiting on hold.
+						</div>
+					</li>
+					<li>
+						<div class="advantages__icon">
+							<img src="img/icons/advantages-icon-3.svg" alt="">
+						</div>
+						<div class="advantages__item-title">Fast Service</div>
+						<div class="advantages__text text">
+							We deliver on time - every time.
+						</div>
+					</li>
+					<li>
+						<div class="advantages__icon">
+							<img src="img/icons/advantages-icon-4.svg" alt="">
+						</div>
+						<div class="advantages__item-title">Reliable</div>
+						<div class="advantages__text text">
+							We are reputable and reliable couriers in Melbourne.
+						</div>
+					</li>
+					<li>
+						<div class="advantages__icon">
+							<img src="img/icons/advantages-icon-5.svg" alt="">
+						</div>
+						<div class="advantages__item-title">Trustworthy</div>
+						<div class="advantages__text text">
+							We are always accountable for our services.
+						</div>
+					</li>
+					<li>
+						<div class="advantages__icon">
+							<img src="img/icons/advantages-icon-6.svg" alt="">
+						</div>
+						<div class="advantages__item-title">Highly Rated</div>
+						<div class="advantages__text text">
+							Our testimonials and reviews speak for themselves.
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="testimonials">
+			<div class="container-md">
+				<h2 class="testimonials__title title-2">Our Happy Customers</h2>
+				<div class="testimonials__slider swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="testimonial">
+								<div class="testimonial__head">
+									<div class="testimonial__photo ibg">
+										<img src="img/photo/testimonial-img-1.jpg" alt="">
+									</div>
+									<div class="testimonial__right">
+										
+
+<div class="testimonial__rating rating-block">
+    <div class="rating-wrap">
+        <div class="rating ">
+            <div class="rating__line">
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+            </div>
+            <div class="rating__activeline">
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+            </div>
+            <input value="4" type="hidden" name="rating">
+            <div class="stars">
+                <span class="star"><i>Ужасно</i></span>
+                <span class="star"><i>Плохо</i></span>
+                <span class="star"><i>Нормально</i></span>
+                <span class="star"><i>Хорошо</i></span>
+                <span class="star"><i>Отлично</i></span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+										<div class="testimonial__position">at Google</div>
+									</div>
+								</div>
+								<div class="testimonial__name">Firstname Lastname</div>
+								<div class="testimonial__date">January 29, 2021</div>
+								<div class="testimonial__text text">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua.
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="testimonial">
+								<div class="testimonial__head">
+									<div class="testimonial__photo ibg">
+										<img src="img/photo/testimonial-img-2.jpg" alt="">
+									</div>
+									<div class="testimonial__right">
+										
+
+<div class="testimonial__rating rating-block">
+    <div class="rating-wrap">
+        <div class="rating ">
+            <div class="rating__line">
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+            </div>
+            <div class="rating__activeline">
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+            </div>
+            <input value="4" type="hidden" name="rating">
+            <div class="stars">
+                <span class="star"><i>Ужасно</i></span>
+                <span class="star"><i>Плохо</i></span>
+                <span class="star"><i>Нормально</i></span>
+                <span class="star"><i>Хорошо</i></span>
+                <span class="star"><i>Отлично</i></span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+										<div class="testimonial__position">at Google</div>
+									</div>
+								</div>
+								<div class="testimonial__name">Firstname Lastname</div>
+								<div class="testimonial__date">January 29, 2021</div>
+								<div class="testimonial__text text">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua.
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="testimonial">
+								<div class="testimonial__head">
+									<div class="testimonial__photo ibg">
+										<img src="img/photo/testimonial-img-3.jpg" alt="">
+									</div>
+									<div class="testimonial__right">
+										
+
+<div class="testimonial__rating rating-block">
+    <div class="rating-wrap">
+        <div class="rating ">
+            <div class="rating__line">
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+            </div>
+            <div class="rating__activeline">
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+            </div>
+            <input value="4" type="hidden" name="rating">
+            <div class="stars">
+                <span class="star"><i>Ужасно</i></span>
+                <span class="star"><i>Плохо</i></span>
+                <span class="star"><i>Нормально</i></span>
+                <span class="star"><i>Хорошо</i></span>
+                <span class="star"><i>Отлично</i></span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+										<div class="testimonial__position">at Google</div>
+									</div>
+								</div>
+								<div class="testimonial__name">Firstname Lastname</div>
+								<div class="testimonial__date">January 29, 2021</div>
+								<div class="testimonial__text text">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua.
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="testimonial">
+								<div class="testimonial__head">
+									<div class="testimonial__photo ibg">
+										<img src="img/photo/testimonial-img-4.jpg" alt="">
+									</div>
+									<div class="testimonial__right">
+										
+
+<div class="testimonial__rating rating-block">
+    <div class="rating-wrap">
+        <div class="rating ">
+            <div class="rating__line">
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+            </div>
+            <div class="rating__activeline">
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+            </div>
+            <input value="4" type="hidden" name="rating">
+            <div class="stars">
+                <span class="star"><i>Ужасно</i></span>
+                <span class="star"><i>Плохо</i></span>
+                <span class="star"><i>Нормально</i></span>
+                <span class="star"><i>Хорошо</i></span>
+                <span class="star"><i>Отлично</i></span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+										<div class="testimonial__position">at Google</div>
+									</div>
+								</div>
+								<div class="testimonial__name">Firstname Lastname</div>
+								<div class="testimonial__date">January 29, 2021</div>
+								<div class="testimonial__text text">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua.
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="testimonial">
+								<div class="testimonial__head">
+									<div class="testimonial__photo ibg">
+										<img src="img/photo/testimonial-img-1.jpg" alt="">
+									</div>
+									<div class="testimonial__right">
+										
+
+<div class="testimonial__rating rating-block">
+    <div class="rating-wrap">
+        <div class="rating ">
+            <div class="rating__line">
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+                <span class="icon-star-empty"></span>
+            </div>
+            <div class="rating__activeline">
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+                <span class="icon-star-full"></span>
+            </div>
+            <input value="4" type="hidden" name="rating">
+            <div class="stars">
+                <span class="star"><i>Ужасно</i></span>
+                <span class="star"><i>Плохо</i></span>
+                <span class="star"><i>Нормально</i></span>
+                <span class="star"><i>Хорошо</i></span>
+                <span class="star"><i>Отлично</i></span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+										<div class="testimonial__position">at Google</div>
+									</div>
+								</div>
+								<div class="testimonial__name">Firstname Lastname</div>
+								<div class="testimonial__date">January 29, 2021</div>
+								<div class="testimonial__text text">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="process">
+			<div class="process__bg">
+				<img src="img/photo/process-bg.svg" alt="">
+			</div>
+			<div class="process__body container-md">
+				<h2 class="process__title title-2">Our Simple Process</h2>
+				<div class="process__list">
+					<div class="process__list-item">
+						<div class="process__card">
+							<div class="process__card-icon">
+								<img src="img/icons/process-icon-1.svg" alt="">
+							</div>
+							<div class="process__card-title">Booking</div>
+							<div class="process__card-text text">
+								Book your courier delivery online or by calling us.
+							</div>
+							<div class="process__card-bottom">
+								<img src="img/icons/card-bottom.svg" alt="">
+							</div>
+							<div class="process__card-num">
+								1
+							</div>
+						</div>
+					</div>
+					<div class="process__list-item">
+						<div class="process__card">
+							<div class="process__card-icon">
+								<img src="img/icons/process-icon-2.svg" alt="">
+							</div>
+							<div class="process__card-title">Confirmation</div>
+							<div class="process__card-text text">
+								We'll provide an instant & transparent quote and confirm your delivery details.
+							</div>
+							<div class="process__card-bottom">
+								<img src="img/icons/card-bottom.svg" alt="">
+							</div>
+							<div class="process__card-num">
+								2
+							</div>
+						</div>
+					</div>
+					<div class="process__list-item">
+						<div class="process__card">
+							<div class="process__card-icon">
+								<img src="img/icons/process-icon-3.svg" alt="">
+							</div>
+							<div class="process__card-title">Pick Up</div>
+							<div class="process__card-text text">
+								We'll pick up your item from wherever you like and whenever it's ready.
+							</div>
+							<div class="process__card-bottom">
+								<img src="img/icons/card-bottom.svg" alt="">
+							</div>
+							<div class="process__card-num">
+								3
+							</div>
+						</div>
+					</div>
+					<div class="process__list-item">
+						<div class="process__card">
+							<div class="process__card-icon">
+								<img src="img/icons/process-icon-4.svg" alt="">
+							</div>
+							<div class="process__card-title">Delivery</div>
+							<div class="process__card-text text">
+								We'll transport your item with care and let you know once it's been delivered.
+							</div>
+							<div class="process__card-bottom">
+								<img src="img/icons/card-bottom.svg" alt="">
+							</div>
+							<div class="process__card-num">
+								4
+							</div>
+						</div>
+					</div>
+					<div class="process__line">
+						<img src="img/icons/process-line.svg" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="booking-form-wrap">
+			<div class="container-lg">
+				<form action="#" class="booking-form booking-form_dark">
+					<div class="booking-form__body">
+						<div class="booking-form__item">
+							<div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+							<div class="booking-form__input">
+								<img src="img/icons/location-form-icon.svg" alt="">
+								<input type="text" placeholder="Pickup Address">
+							</div>
+						</div>
+						<div class="booking-form__item">
+							<div class="booking-form__input">
+								<img src="img/icons/location-form-icon.svg" alt="">
+								<input type="text" placeholder="Delivery Address">
+							</div>
+						</div>
+						<div class="booking-form__item size">
+							<div class="booking-form__label text-center">Size</div>
+							<div class="booking-form__radio-group">
+								<label class="booking-form__radio">
+									<input type="radio" name="size">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="size">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="size" checked>
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+									</div>
+								</label>
+							</div>
+							<div class="booking-form__radio-subtext">
+								Fits into a truck: Furniture, Construction Material, Shipping Pallets
+							</div>
+						</div>
+						<div class="booking-form__item speed">
+							<div class="booking-form__label text-center">Speed</div>
+							<div class="booking-form__radio-group">
+								<label class="booking-form__radio">
+									<input type="radio" name="speed">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="speed">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="speed">
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+									</div>
+								</label>
+								<label class="booking-form__radio">
+									<input type="radio" name="speed" checked>
+									<div class="booking-form__radio-icon">
+										<img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+									</div>
+								</label>
+							</div>
+							<div class="booking-form__radio-subtext">
+								Within 3-4 hours, if ordered before 2 pm
+							</div>
+						</div>
+						<div class="booking-form__item">
+							<button class="btn-default" type="submit">Confirm Booking</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+
+
+	<!-- == FOOTER ================== -->
+	<footer class="footer">
+    <div class="footer__body container-lg">
+        <div class="footer__row-1 text">
+            <div class="footer__col footer__col-1">
+                <div class="footer__logo">
+                    <a href="#">
+                        <img src="img/logo/logo.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__col footer__col-2">
+                <a href="#" class="footer__title">
+                    Services
+                </a>
+                <ul class="footer__list">
+                    <li>
+                        <a href="#" class="footer__link">Same Day Delivery</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Priority Delivery</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Express Delivery</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Next Day Delivery</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col-3">
+                <a href="#" class="footer__title">
+                    About
+                </a>
+                <ul class="footer__list">
+                    <li>
+                        <a href="#" class="footer__link">Our Company</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">FAQ's</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Join Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col-4">
+                <ul class="footer__list">
+                    <li>
+                        <a href="#" class="footer__link">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Terms & Conditions</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col-5">
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <img class="img-svg" src="img/icons/linkedin.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="img-svg" src="img/icons/facebook.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="img-svg" src="img/icons/instagram.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__row-2">
+            <div class="footer__copy">
+                Copyright © 2020. Logo. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+	<!-- == // FOOTER ================== -->
+</body>
+
+</html>
