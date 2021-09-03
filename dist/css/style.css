@@ -3300,6 +3300,9 @@ textarea {
 
   .menu__link {
     color: #0E2A4E;
+    text-align: center;
+    width: 100%;
+    display: block;
   }
 
   .footer__row-1 {

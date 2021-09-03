@@ -178,6 +178,9 @@
 
         @media (max-width: $md2+px) {
             color: $textColor;
+            text-align: center;
+            width: 100%;
+            display: block;
         }
 
         @media (min-width: 992px) {
