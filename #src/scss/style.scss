@@ -239,10 +239,42 @@ textarea {
 .text {
 	font-weight: 300;
 	font-size: 18px;
-	line-height: 1.666em;
+	line-height: 1.52em;
 
 	@media (max-width: $md4+px) {
 		font-size: 16px;
+	}
+	
+	& p {
+		margin-bottom: 1.33em;
+	}
+
+	& ul {
+		margin-bottom: 1.33em;
+
+		& > li {
+			position: relative;
+			padding-left: 20px;
+
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+
+			&:before {
+				position: absolute;
+				content: '';
+				top: 9px;
+				left: 0;
+				width: 10px;
+				height: 10px;
+				background-color: $mainColor;
+				border-radius: 50%;
+
+				@media (max-width: $md4+px) {
+					top: 7px;
+				}
+			}
+		}
 	}
 }
 // === and title ========================================================================
