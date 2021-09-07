@@ -180,3 +180,23 @@ function setSameHeight(items) {
     let maxHeight = Math.max(...Array.from(items).map(i => i.clientHeight));
     items.forEach(i => i.style.minHeight = maxHeight + 'px');
 }
+
+function inputOnlyNum() {
+	let inputs = document.querySelectorAll('._only-num');
+
+	if(inputs.length) {
+		inputs.forEach(input => {
+			let num = 1;
+
+			input.addEventListener('input', (e) => {
+
+				if(/\d$/.test(e.target.value) || !e.target.value.trim()) {
+					num = e.target.value;
+				}
+
+				e.target.value = num;
+			})
+		})
+	}
+}
+

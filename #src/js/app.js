@@ -25,7 +25,6 @@ window.addEventListener('load', function () {
 	@@include('_function.js');
 
 	@@include('forms.js');
-	@@include('../common/checkbox/checkbox.js');
 	@@include('../common/header/header.js');
 	@@include('../common/rating/rating.js');
 	@@include('../common/testimonials/testimonials.js');
@@ -51,7 +50,12 @@ window.addEventListener('load', function () {
 		}, 'xml');
 	  });
 	  
-	
+	let bookingOptions = document.querySelector('.b-form__options');
+	if(bookingOptions) {
+		let textItems = bookingOptions.querySelectorAll('.b-form__text');
+		setSameHeight(textItems)
+	}
+	inputOnlyNum()
 });
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -78,7 +82,9 @@ window.addEventListener('DOMContentLoaded', function() {
 			document.querySelector('body').classList.add('no-webp');
 		}
 	});
+
 });
 
-//@@include('plagins/lazy-load.js');
+@@include('blocks/map.js');
+
 

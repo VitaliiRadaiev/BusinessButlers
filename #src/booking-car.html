@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{
+    "white": "header_white",
+    })
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page booking-page _padding-top">
+        <section class="hero hero_v2">
+            <div class="hero__bg">
+                <div class="hero__bg-layer-1">
+                    <img src="img/photo/hero-top-layer-2.svg" alt="">
+                </div>
+            </div>
+            <div class="container-lg">
+                <div class="hero__body">
+                    <div class="hero__text-wrap">
+                        <div class="hero__text-wrap-col-1">
+                            <h1 class="hero__title">
+                                <strong>Book</strong>
+                                Your Courier
+                                Delivery
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="booking-tabs">
+            <div class="container-md">
+                <div class="booking-tabs__body">
+                    <div class="booking-tabs__label">The size of my item is best suited for a:</div>
+                    <div class="booking-tabs__items">
+                        <div class="booking-tabs__item active">
+                            <span>Car Delivery</span>
+                            <img src="img/icons/size-icon-1.svg" alt="" class="img-svg">
+                        </div>
+                        <div class="booking-tabs__item">
+                            <span>Van Delivery</span>
+                            <img src="img/icons/size-icon-2.svg" alt="" class="img-svg">
+                        </div>
+                        <div class="booking-tabs__item">
+                            <span>Truck Delivery</span>
+                            <img src="img/icons/size-icon-3.svg" alt="" class="img-svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="b-form">
+            <div class="container-lg">
+                <div class="b-form__row">
+                    <div class="flex-col-2">
+                        <div class="col flex flex-wrap">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__label">
+                                    Pickup Address
+                                    <img src="img/icons/location-form-icon.svg" alt="">
+                                </div>
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Suite">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Floor">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-100">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Street No & Name ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col flex flex-wrap">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__label">
+                                    Delivery Address
+                                    <img src="img/icons/location-form-icon.svg" alt="">
+                                </div>
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Suite">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Floor">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-100">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Street No & Name ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b-form__row">
+                    <div class="flex flex-md">
+                        <div class="b-form__item width-40">
+                            <div class="b-form__label">
+                                Delivery Item
+                            </div>
+                            <div class="b-form__input">
+                                <input class="input" type="text" placeholder="Insert your item">
+                            </div>
+                        </div>
+                        <div class="b-form__item width-40">
+                            <div class="b-form__label">
+                                Delivery Date
+                            </div>
+                            <div class="b-form__input b-form__input-wth-icon">
+                                <input class="input _date" type="text" placeholder="Insert your date">
+                                <img src="img/icons/speed-icon-1.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="b-form__item flex-shrink-0 width-150px">
+                            <div class="b-form__label">
+                                Quantity
+                            </div>
+                            <div class="b-form__input quantity">
+                                <input class="input" type="text" placeholder="Suite" value="1">
+                                <div class="quantity__button quantity__button_plus">
+                                    <img src="img/icons/chevron-up.svg" alt="">
+                                </div>
+                                <div class="quantity__button quantity__button_minus">
+                                    <img src="img/icons/chevron-down.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="map" class="b-form__map"> </div>
+                </div>
+
+                <div class="b-form__row">
+                    <div class="b-form__label">
+                        Delivery Time Frame
+                    </div>
+                    <div class="time-frame">
+                        <div class="time-frame__item">
+                            <label class="time-frame__radio">
+                                <input type="radio" name="time-frame" checked>
+                                <div class="time-frame__radio-bg"></div>
+                                <div class="time-frame__radio-icon">
+                                    <img src="img/icons/speed-icon-strong-1.svg" alt="">
+                                </div>
+                                <div class="time-frame__radio-title">
+                                    Same Day Delivery 
+                                </div>
+                                <div class="time-frame__radio-text">
+                                    <p>
+                                        $2.60 per km travelled
+                                    </p>
+                                    <p>
+                                        If scheduled before 1pm of the same day
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="time-frame__item">
+                            <label class="time-frame__radio">
+                                <input type="radio" name="time-frame">
+                                <div class="time-frame__radio-bg"></div>
+                                <div class="time-frame__radio-icon">
+                                    <img src="img/icons/speed-icon-strong-2.svg" alt="">
+                                </div>
+                                <div class="time-frame__radio-title">
+                                    Priority Delivery 
+                                </div>
+                                <div class="time-frame__radio-text">
+                                    <p>
+                                        $3.20 per km travelled
+                                    </p>
+                                    <p>
+                                        If scheduled before 2pm of the same day
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="time-frame__item">
+                            <label class="time-frame__radio">
+                                <input type="radio" name="time-frame">
+                                <div class="time-frame__radio-bg"></div>
+                                <div class="time-frame__radio-icon">
+                                    <img src="img/icons/speed-icon-strong-3.svg" alt="">
+                                </div>
+                                <div class="time-frame__radio-title">
+                                    Express Delivery
+                                </div>
+                                <div class="time-frame__radio-text">
+                                    <p>
+                                        $5.00 per km travelled
+                                    </p>
+                                    <p>
+                                        If scheduled before 3pm of the same day
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="time-frame__item">
+                            <label class="time-frame__radio">
+                                <input type="radio" name="time-frame">
+                                <div class="time-frame__radio-bg"></div>
+                                <div class="time-frame__radio-icon">
+                                    <img src="img/icons/speed-icon-strong-4.svg" alt="">
+                                </div>
+                                <div class="time-frame__radio-title">
+                                    Next Day Delivery
+                                </div>
+                                <div class="time-frame__radio-text">
+                                    <p>
+                                        $2.60 per km travelled
+                                    </p>
+                                    <p>
+                                        If scheduled before 1pm of a business day before your delivery date. 
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="b-form__row">
+                    <div class="amount">
+                        <div>
+                            Amount <span>61<sub>$</sub></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="b-form__row">
+                    <div class="b-form__label">
+                        My Contact Details
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="b-form__item width-100 width-50-sm width-25-lg">
+                            <div class="b-form__input">
+                                <input class="input" type="text" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="b-form__item width-100 width-50-sm width-25-lg">
+                            <div class="b-form__input">
+                                <input class="input" type="text" placeholder="Business">
+                            </div>
+                        </div>
+                        <div class="b-form__item width-100 width-50-sm width-25-lg">
+                            <div class="b-form__input">
+                                <input class="input" type="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="b-form__item width-100 width-50-sm width-25-lg">
+                            <div class="b-form__input">
+                                <input class="input _mask" type="text" placeholder="Phone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="b-form__row">
+                    <div class="b-form__label">
+                        Delivery Contact Details
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="b-form__item width-100 width-50-sm">
+                            <div class="b-form__input">
+                                <input class="input" type="text" placeholder="Delivery Contact Person">
+                            </div>
+                        </div>
+                        <div class="b-form__item width-100 width-50-sm width-25-lg">
+                            <div class="b-form__input">
+                                <input class="input _mask" type="text" placeholder="Phone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="b-form__row">
+                    <div class="b-form__options">
+                        <div class="col">
+                            <div class="b-form__title">
+                                Delivery Verification
+                            </div>
+                            <div class="b-form__text text">
+                                Please confirm how you would like us to verify your delivery.
+                            </div>
+
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox" checked>
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    I don´t need my delivery to be signed for
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox" >
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    You can leave my delivery unattended
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox" >
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Call me once my delivery has been completed
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox" >
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Send me a confirmation email
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <div class="b-form__title">
+                                Payment
+                            </div>
+                            <div class="b-form__text text">
+                                Please confirm how you would like to pay.
+                            </div>
+
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox" checked>
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Please email me an invoice
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox" >
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Debit/Credit Card at the pickup location
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox" >
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Please email me an invoice
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox" >
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Drop-off location
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <div class="b-form__title">
+                                Communication Preference
+                            </div>
+                            <div class="b-form__text text">
+                                Confirm how you'd like us to contact you.
+                            </div>
+
+                            <label class="checkbox-radio mb-40px">
+                                <input type="radio" name="connection" checked>
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Email
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="radio" name="connection">
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    SMS
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="radio" name="connection">
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Phone
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="b-form__row">
+                    <div class="b-form__bottom">
+                        <div class="b-form__bottom-title">
+                            Additional Info
+                        </div>
+                        <div class="b-form__bottom-text text">
+                            Please make this the same width to be in line with the other fields
+                        </div>
+                        <textarea  class="textarea mb-15" placeholder="Write here..."></textarea>
+                        <button class="btn-default btn-default_dark" type="submit">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="booking-form-wrap">
+            <div class="container-lg">
+                <form action="#" class="booking-form booking-form_dark">
+                    <div class="booking-form__body">
+                        <div class="booking-form__item">
+                            <div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+                            <div class="booking-form__input">
+                                <img src="img/icons/location-form-icon.svg" alt="">
+                                <input type="text" placeholder="Pickup Address">
+                            </div>
+                        </div>
+                        <div class="booking-form__item">
+                            <div class="booking-form__input">
+                                <img src="img/icons/location-form-icon.svg" alt="">
+                                <input type="text" placeholder="Delivery Address">
+                            </div>
+                        </div>
+                        <div class="booking-form__item size">
+                            <div class="booking-form__label text-center">Size</div>
+                            <div class="booking-form__radio-group">
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size" checked>
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="booking-form__radio-subtext">
+                                Fits into a truck: Furniture, Construction Material, Shipping Pallets
+                            </div>
+                        </div>
+                        <div class="booking-form__item speed">
+                            <div class="booking-form__label text-center">Speed</div>
+                            <div class="booking-form__radio-group">
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed" checked>
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="booking-form__radio-subtext">
+                                Within 3-4 hours, if ordered before 2 pm
+                            </div>
+                        </div>
+                        <div class="booking-form__item">
+                            <button class="btn-default" type="submit">Confirm Booking</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+        defer></script>
+</body>
+
+</html>

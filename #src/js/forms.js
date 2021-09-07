@@ -306,7 +306,7 @@ function inputs_init(inputs) {
 				//'+375(99)999-99-99'
 				let maskValue = input.dataset.mask;
 				input.classList.add('_mask');
-				Inputmask('+1(999) 999 9999', {
+				Inputmask('+9(999) 999 9999', {
 					//"placeholder": '',
 					clearIncomplete: true,
 					clearMaskOnLostFocus: true,
@@ -323,7 +323,8 @@ function inputs_init(inputs) {
 					},
 					onSelect: function (input, instance, date) {
 						input_focus_add(input.el);
-					}
+					},
+					minDate: new Date(),
 				});
 			}
 

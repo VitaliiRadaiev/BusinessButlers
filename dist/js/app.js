@@ -203,7 +203,28 @@ function setSameHeight(items) {
 
     let maxHeight = Math.max(...Array.from(items).map(i => i.clientHeight));
     items.forEach(i => i.style.minHeight = maxHeight + 'px');
-};
+}
+
+function inputOnlyNum() {
+	let inputs = document.querySelectorAll('._only-num');
+
+	if(inputs.length) {
+		inputs.forEach(input => {
+			let num = 1;
+
+			input.addEventListener('input', (e) => {
+
+				if(/\d$/.test(e.target.value) || !e.target.value.trim()) {
+					num = e.target.value;
+				}
+
+				e.target.value = num;
+			})
+		})
+	}
+}
+
+;
 
 	// //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 // let forms = document.querySelectorAll('form');
@@ -513,7 +534,7 @@ function inputs_init(inputs) {
 				//'+375(99)999-99-99'
 				let maskValue = input.dataset.mask;
 				input.classList.add('_mask');
-				Inputmask('+1(999) 999 9999', {
+				Inputmask('+9(999) 999 9999', {
 					//"placeholder": '',
 					clearIncomplete: true,
 					clearMaskOnLostFocus: true,
@@ -530,7 +551,8 @@ function inputs_init(inputs) {
 					},
 					onSelect: function (input, instance, date) {
 						input_focus_add(input.el);
-					}
+					},
+					minDate: new Date(),
 				});
 			}
 
@@ -714,30 +736,6 @@ if(priceSlider) {
 }
 
 // == // PRICE SLIDER =====================================================;
-	(function checkboxHandler() {
-	let $checkboxWrap = document.querySelectorAll('.checkbox-wrap');
-	if($checkboxWrap.length) {
-		$checkboxWrap.forEach((item, index) => {
-			let input = item.querySelector('input[type="checkbox"]');
-			input.checked = true;
-			item.querySelector('.checkbox-wrap__label').setAttribute('for', `_form${index}`)
-			input.id = `_form${index}`;
-			
-			if(input.checked) {
-				item.classList.add('_is-checked');
-			}
-			
-			input.addEventListener('click', () => {
-				if(input.checked) {
-					item.classList.add('_is-checked');
-				} else {
-					item.classList.remove('_is-checked');
-				}
-				
-			})
-		})
-	}
-})();;
 	{
     let header = document.querySelector('.header');
     if (header) {
@@ -871,7 +869,12 @@ function setrating(th, val) {
 		}, 'xml');
 	  });
 	  
-	
+	let bookingOptions = document.querySelector('.b-form__options');
+	if(bookingOptions) {
+		let textItems = bookingOptions.querySelectorAll('.b-form__text');
+		setSameHeight(textItems)
+	}
+	inputOnlyNum()
 });
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -1034,68 +1037,44 @@ window.addEventListener('DOMContentLoaded', function() {
 			document.querySelector('body').classList.add('no-webp');
 		}
 	});
+
 });
 
-//// html example --- <img class="lazy" data-src="https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" src="img/photo/placeholder.jpg" alt="img">
 
+function initMap() {
+	var map;
 
-// === lazy load ==================================================================
-document.addEventListener("DOMContentLoaded", function () {
-	var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    let active = false;
+	var center = {
+		lat: 40.68950,
+		lng: -74.044683,
+	}
 
-	if ("IntersectionObserver" in window) {
-        
-		let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					let lazyImage = entry.target;
-					lazyImage.src = lazyImage.dataset.src;
-					//lazyImage.srcset = lazyImage.dataset.srcset;
-					lazyImage.classList.remove("lazy");
-					lazyImageObserver.unobserve(lazyImage);
-				}
-			});
-		});
+	var markerPosition = {
+		lat: 40.68950,
+		lng: -74.044683,
+	}
 
-		lazyImages.forEach(function (lazyImage) {
-			lazyImageObserver.observe(lazyImage);
-		});
-	} else {
-        const lazyLoad = function() {
-            if (active === false) {
-              active = true;
-              setTimeout(function() {
-                lazyImages.forEach(function(lazyImage) {
-                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                    lazyImage.src = lazyImage.dataset.src;
-                    //lazyImage.srcset = lazyImage.dataset.srcset;
-                    lazyImage.classList.remove("lazy");
-        
-                    lazyImages = lazyImages.filter(function(image) {
-                      return image !== lazyImage;
-                    });
-        
-                    if (lazyImages.length === 0) {
-                      document.removeEventListener("scroll", lazyLoad);
-                      window.removeEventListener("resize", lazyLoad);
-                      window.removeEventListener("orientationchange", lazyLoad);
-                    }
-                  }
-                });
-        
-                active = false;
-              }, 200);
-            }
-          };
-      
-          lazyLoad();
-        
-          document.addEventListener("scroll", lazyLoad);
-          window.addEventListener("resize", lazyLoad);
-          window.addEventListener("orientationchange", lazyLoad);
-    }
-    
-});
-// === // lazy load ==================================================================;
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: { lat: center.lat, lng: center.lng },
+
+		zoom: 16,
+
+		//styles: 
+	});
+
+	var marker = new google.maps.Marker({
+
+		position: { lat: markerPosition.lat, lng: markerPosition.lng },
+
+		map: map,
+
+		title: '',
+		label: '',
+
+		// icon: 'img/contact/googlMarker.svg',
+	});
+
+}
+;
+
 

@@ -20,6 +20,7 @@
 
     &.is-scroll, &.menu-open {
         background-color: #fff;
+        box-shadow: 0 0 20px rgba($textColor, 0.2);
         & .header__body {
             padding-top: 20px;
 

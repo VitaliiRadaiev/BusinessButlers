@@ -33,7 +33,7 @@
 
 // ==== PLAGINS ===========================================================================================
 @import "plagins/swiper-bundle";
-//@import "plagins/drift-basic";
+@import "plagins/datepicker";
 // ==== // PLAGINS ===========================================================================================
 
 // ==== FORM STYLE DEFAULT ===========================================================================================
@@ -151,6 +151,21 @@ textarea {
 	appearance: none;
 }
 
+[disabled] {
+	pointer-events: none;
+	color: rgba(33, 57, 87, 0.5);
+
+	& * {
+		color: rgba(33, 57, 87, 0.5) !important;
+	}
+
+	& .address-amount {
+		& input {
+			background-color: rgba(33, 57, 87, 0.5);
+		}
+	}
+}
+
 .center {
 	text-align: center;
 }
@@ -217,7 +232,6 @@ textarea {
 	@media (max-width: $md4+px) {
 		font-size: 38px;
 	}
-
 }
 
 .title-3 {
@@ -244,37 +258,49 @@ textarea {
 	@media (max-width: $md4+px) {
 		font-size: 16px;
 	}
-	
+
 	& p {
 		margin-bottom: 1.33em;
 	}
 
-	& ul {
-		margin-bottom: 1.33em;
+	&:not(.text-2) {
+		& ul {
+			margin-bottom: 1.33em;
 
-		& > li {
-			position: relative;
-			padding-left: 20px;
+			& > li {
+				position: relative;
+				padding-left: 20px;
 
-			&:not(:last-child) {
-				margin-bottom: 10px;
-			}
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
 
-			&:before {
-				position: absolute;
-				content: '';
-				top: 9px;
-				left: 0;
-				width: 10px;
-				height: 10px;
-				background-color: $mainColor;
-				border-radius: 50%;
+				&:before {
+					position: absolute;
+					content: "";
+					top: 9px;
+					left: 0;
+					width: 10px;
+					height: 10px;
+					background-color: $mainColor;
+					border-radius: 50%;
 
-				@media (max-width: $md4+px) {
-					top: 7px;
+					@media (max-width: $md4+px) {
+						top: 7px;
+					}
 				}
 			}
 		}
+	}
+}
+
+.text-big {
+	font-size: 28px;
+	line-height: 149%;
+	font-weight: 300;
+
+	@media (max-width: $md3+px) {
+		font-size: 20px;
 	}
 }
 // === and title ========================================================================
@@ -307,14 +333,60 @@ textarea {
 			color: $textColorLight;
 		}
 	}
+
+	&.btn-default_dark {
+		background-color: $textColor;
+		color: $mainColor;
+		border: 1px solid $mainColor;
+	}
 }
 
 // === and btn ========================================================================
 
 .input {
+	background: #ffffff;
+	border: 1px solid #858d8f;
+	display: flex;
+	align-items: center;
+	border-radius: 100px;
+	height: 56px;
+	padding: 8px 33px;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 120%;
+	color: $textColor;
+	width: 100%;
+
+	@media (max-width: $md4+px) {
+		padding: 8px 15px;
+	}
+
+	&::placeholder {
+		font-weight: 300;
+		font-size: 15px;
+		line-height: 120%;
+		color: #949494;
+	}
 }
 
 .textarea {
+	border: 1px solid #858d8f;
+	box-sizing: border-box;
+	border-radius: 24px;
+	padding: 14px 39px;
+	resize: none;
+	height: 157px;
+	font-weight: 800;
+	font-size: 20px;
+	line-height: 149%;
+	color: $textColor;
+
+	&::placeholder {
+		font-weight: 800;
+		font-size: 20px;
+		line-height: 149%;
+		color: #949494;
+	}
 }
 
 .link {
@@ -375,9 +447,11 @@ textarea {
 @import "../common/rating/rating";
 @import "../common/testimonials/testimonials";
 @import "../common/process/process";
+@import "../common/hero/hero";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
 @import "pages/home";
 @import "pages/size-deliveries";
+@import "pages/booking";
 // ==== AND PAGES =====================================================
