@@ -305,7 +305,9 @@
 .mb-40px {
     margin-bottom: 40px;
 }
-
+.mb-50px {
+    margin-bottom: 47px;
+}
 .ml-auto {
     margin-left: auto;
 }
@@ -471,7 +473,7 @@
         display: block;
         height: 100%;
         position: relative;
-        padding: 34px max(10px, 7%) 34px;
+        padding: 21px max(10px, 7%) 29px;
         text-align: center;
         color: $textColor;
         cursor: pointer;
@@ -547,7 +549,7 @@
         font-weight: 800;
         font-size: 22px;
         line-height: 149%;
-        margin-bottom: 18px;
+        margin-bottom: 14px;
 
         @media (max-width: 575.98px) {
             font-size: 16px;
@@ -566,7 +568,7 @@
 
         & p {
             &:not(:last-child) {
-                margin-bottom: 1em;
+                margin-bottom: 1.2em;
             }
         }
     }
@@ -592,11 +594,17 @@
         margin-bottom: 50px;
     }
 
+    & > div {
+        @media (min-width: 992px) {
+            transform: translateX(-7px);
+        }
+    }
+
     & span {
         font-weight: 300;
         font-size: 2.33em;
         line-height: 149%;
-        margin-left: 20px;
+        margin-left: 27px;
         & sub {
             font-size: 0.42em;
             bottom: 0;

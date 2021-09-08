@@ -3,23 +3,7 @@
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Black.woff") format("woff"), url("../fonts/Gilroy-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  font-display: swap;
-  src: url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  font-display: swap;
-  src: url("../fonts/Gilroy-ExtraBold.woff") format("woff"), url("../fonts/Gilroy-ExtraBold.woff2") format("woff2");
+  src: url("../fonts/Gilroy-ExtraBold.otf");
   font-weight: 800;
   font-style: normal;
 }
@@ -27,23 +11,15 @@
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Light.woff") format("woff"), url("../fonts/Gilroy-Light.woff2") format("woff2");
-  font-weight: 300;
+  src: url("../fonts/Gilroy-Bold.otf");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  font-display: swap;
-  src: url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.woff2") format("woff2");
+  src: url("../fonts/Gilroy-Regular.otf");
   font-weight: 400;
   font-style: normal;
 }
@@ -51,24 +27,8 @@
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-SemiBold.woff") format("woff"), url("../fonts/Gilroy-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  font-display: swap;
-  src: url("../fonts/Gilroy-Thin.woff") format("woff"), url("../fonts/Gilroy-Thin.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  font-display: swap;
-  src: url("../fonts/Gilroy-UltraLight.woff") format("woff"), url("../fonts/Gilroy-UltraLight.woff2") format("woff2");
-  font-weight: 200;
+  src: url("../fonts/Gilroy-Light.otf");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -2092,7 +2052,7 @@ textarea {
   font-weight: 800;
   font-size: 45px;
   line-height: 1.333em;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
 }
 
 .text {
@@ -2332,6 +2292,11 @@ textarea {
 
 .header.header_white .burger span {
   background-color: #0E2A4E;
+}
+
+.header.header_white .header__logo {
+  max-width: 153px;
+  margin-right: 52px;
 }
 
 .header.is-scroll,
@@ -3198,7 +3163,7 @@ textarea {
           flex-direction: column;
   font-size: 70px;
   line-height: 0.857em;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
   color: #DFBD82;
   font-weight: 400;
 }
@@ -4262,6 +4227,10 @@ textarea {
   margin-bottom: 40px;
 }
 
+.mb-50px {
+  margin-bottom: 47px;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -4431,7 +4400,7 @@ textarea {
   display: block;
   height: 100%;
   position: relative;
-  padding: 34px max(10px, 7%) 34px;
+  padding: 21px max(10px, 7%) 29px;
   text-align: center;
   color: #0E2A4E;
   cursor: pointer;
@@ -4498,7 +4467,7 @@ textarea {
   font-weight: 800;
   font-size: 22px;
   line-height: 149%;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .time-frame__radio-text {
@@ -4508,7 +4477,7 @@ textarea {
 }
 
 .time-frame__radio-text p:not(:last-child) {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
 }
 
 .amount {
@@ -4538,7 +4507,7 @@ textarea {
   font-weight: 300;
   font-size: 2.33em;
   line-height: 149%;
-  margin-left: 20px;
+  margin-left: 27px;
 }
 
 .amount span sub {
@@ -5050,6 +5019,12 @@ textarea {
     background-color: rgba(14, 42, 78, 0.1);
   }
 
+  .amount > div {
+    -webkit-transform: translateX(-7px);
+        -ms-transform: translateX(-7px);
+            transform: translateX(-7px);
+  }
+
   .about-block__body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5221,6 +5196,10 @@ textarea {
 @media (max-width: 991.98px) {
   .select__title {
     font-size: 18px;
+  }
+
+  .header.header_white .header__logo {
+    margin-right: auto;
   }
 
   .header__logo {
@@ -5815,6 +5794,10 @@ textarea {
   .textarea {
     padding-left: 20px !important;
     padding-right: 20px !important;
+  }
+
+  .header.header_white .header__logo {
+    max-width: 110px;
   }
 
   .header__logo {

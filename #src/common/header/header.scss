@@ -16,6 +16,19 @@
         & .burger span {
             background-color: $textColor;
         }
+
+        & .header__logo {
+            max-width: 153px;
+            margin-right: 52px;
+
+            @media (max-width: $md2+px) {
+                margin-right: auto;
+            }
+    
+            @media (max-width: $md4+px) {
+                max-width: 110px;
+            }
+        }
     }
 
     &.is-scroll, &.menu-open {
