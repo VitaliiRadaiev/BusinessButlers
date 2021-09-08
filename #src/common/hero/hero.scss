@@ -81,6 +81,12 @@
                 padding-left: 45px;
             }
         }
+
+        & .hero__bottom {
+            @media (min-width: 1440px) {
+                margin: 0 -40px;
+            }
+        }
     }
 
     &__bg {
@@ -321,6 +327,11 @@
             & > li {
 
                 flex: 0 1 33.333%;
+
+                @media (min-width: 1268px) {
+                    margin-bottom: 70px;
+                    padding: 0 75.5px;
+                }
 
                 @media (min-width: 768px) {
                     margin-bottom: 70px;

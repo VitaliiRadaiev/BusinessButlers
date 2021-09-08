@@ -358,7 +358,7 @@ textarea {
 	width: 100%;
 
 	@media (max-width: $md4+px) {
-		padding: 8px 15px;
+		padding: 8px 20px;
 	}
 
 	&::placeholder {
@@ -376,10 +376,11 @@ textarea {
 	padding: 14px 39px;
 	resize: none;
 	height: 157px;
-	font-weight: 800;
+	font-weight: 400;
 	font-size: 20px;
 	line-height: 149%;
 	color: $textColor;
+	width: 100%;
 
 	&::placeholder {
 		font-weight: 800;
@@ -387,9 +388,37 @@ textarea {
 		line-height: 149%;
 		color: #949494;
 	}
+
+	@media (max-width: $md4+px) {
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+	}
 }
 
 .link {
+	font-weight: 800;
+	font-size: 16px;
+	line-height: 149%;
+	color: $textColor;
+	transition: all .3s ease;
+
+	@media (min-width: 992px) {
+		&:hover {
+			color: #3b6ca1;
+		}
+	}
+}
+
+.icon-left {
+	display: inline-flex;
+	align-items: center;
+	font-family: $mainFontFamily !important;
+
+	& img {
+		max-height: 34px;
+		width: auto;
+		margin-right: 13px;
+	}
 }
 
 .hover {
@@ -454,4 +483,5 @@ textarea {
 @import "pages/home";
 @import "pages/size-deliveries";
 @import "pages/booking";
+@import "pages/partner";
 // ==== AND PAGES =====================================================
