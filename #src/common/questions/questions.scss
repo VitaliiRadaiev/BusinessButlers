@@ -1,0 +1,181 @@
+.questions {
+    padding: 93px 0 80px;
+    background: #c3cbcd;
+
+    @media (max-width: $md3+px) {
+        padding: 50px 0 50px;
+    }
+
+    &__body {
+        max-width: 1124px;
+    }
+
+    &__title {
+        margin-bottom: 56px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        overflow: auto;
+        padding: 0 20px 5px;
+        margin: 0 -20px 40px -8px;
+    }
+
+    &__tabs-trigger {
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 1.2em;
+        letter-spacing: -0.02em;
+        color: rgba($textColor, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        padding-bottom: 13px;
+
+        &:not(:last-child) {
+            margin-right: 119px;
+
+            @media (max-width: $md3+px) {
+                margin-right: 50px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $textColor;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 7px;
+            background-color: $mainColor;
+            transition: all 0.3s ease;
+        }
+
+        &.active {
+            color: $textColor;
+            &:after {
+                width: calc(100% + 24px);
+            }
+        }
+    }
+
+    &__tabs-content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__list {
+        & > li {
+            &:not(:last-child) {
+                margin-bottom: 52px;
+
+            }
+        }
+    }
+
+    &__list-title {
+        display: flex;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 149%;
+        color: $textColor;
+        cursor: pointer;
+        align-items: center;
+        transition: all .3s ease;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: #3b6ca1;
+            }
+        }
+
+        & .plus {
+            margin-right: 14px;
+            flex: 0 0 auto;
+        }
+
+        &._active {
+            & .plus {
+                background-color: $textColor;
+                border-color: $mainColor;
+
+                & > span {
+                    transform: rotate(45deg);
+
+                    &:before {
+                        background-color: $mainColor;
+                    }
+                    &:after {
+                        background-color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+
+    &__list-text {
+        padding-left: 60px;
+        max-width: 1044px;
+        display: none;
+        & > p {
+            :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.plus {
+    background: #d7ac6c;
+    border: 3px solid #0e2a4e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    & > span {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        transition: all 0.3s ease;
+        
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: $textColor;
+            transition: all 0.3s ease;
+        }
+        &:after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 4px;
+            background-color: $textColor;
+            transition: all 0.3s ease;
+        }
+    }
+}

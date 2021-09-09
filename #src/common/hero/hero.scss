@@ -68,6 +68,7 @@
                 line-height: 1em;
                 letter-spacing: 0.02em;
                 margin-bottom: 11px;
+                font-weight: 700;
 
                 @media (max-width: $md3+px) {
                     font-size: 60px;
@@ -314,6 +315,29 @@
         }
     }
 
+    &__title-2 {
+        display: flex;
+        flex-direction: column;
+        font-size: 70px;
+        line-height: 0.857em;
+        letter-spacing: 0.04em;
+        color: $mainColor;
+        font-weight: 700;
+
+        & > strong {
+            color: $textColorLight;
+            font-weight: 700;
+        }
+
+        @media (max-width: $md3+px) {
+            text-align: center;
+        }
+
+        @media (max-width: $md4+px) {
+            font-size: 48px;
+        }
+    }
+
     &__subtitle {
         font-size: 28px;
         line-height: 1.22em;
@@ -457,4 +481,8 @@
             margin-bottom: 0;
         }
     }
+}
+
+.d-block {
+    display: block !important;
 }

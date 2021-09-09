@@ -28,9 +28,11 @@ window.addEventListener('load', function () {
 	@@include('../common/header/header.js');
 	@@include('../common/rating/rating.js');
 	@@include('../common/testimonials/testimonials.js');
+	@@include('../common/questions/questions.js');
 	
 	
 	@@include('pages/home.js');
+	@@include('pages/about.js');
 
 
 	$('img.img-svg').each(function(){

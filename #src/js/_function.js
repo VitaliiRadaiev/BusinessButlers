@@ -133,11 +133,6 @@ function createTabs(containerName = false, triggersName = false, tabsName = fals
 		let allTriggers = container.querySelectorAll(`${triggersName}`);
 		let allTabs = container.querySelectorAll(`${tabsName}`);
 
-		if (!allTabs.length) {
-			let err = new Error('Tabs not found.');
-			throw err;
-		}
-
 		if (allTriggers.length) {
 			allTriggers.forEach(trigger => {
 				trigger.addEventListener('click', (e) => {
@@ -163,9 +158,6 @@ function createTabs(containerName = false, triggersName = false, tabsName = fals
 
 				})
 			})
-		} else {
-			let err = new Error('Triggers not found.');
-			throw err;
 		}
 
 	}

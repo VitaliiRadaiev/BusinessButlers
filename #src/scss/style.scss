@@ -400,7 +400,7 @@ textarea {
 	font-size: 16px;
 	line-height: 149%;
 	color: $textColor;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 
 	@media (min-width: 992px) {
 		&:hover {
@@ -437,8 +437,9 @@ textarea {
 
 // === TEXT CONTETN BLOCK ========================================================================
 .text-content {
-	font-size: 17px;
+	font-size: 18px;
 	line-height: 149%;
+	font-weight: 300;
 
 	& h1 {
 	}
@@ -450,11 +451,21 @@ textarea {
 	}
 
 	& h5 {
+		font-weight: 800;
+		font-size: 25px;
+		line-height: 1.2em;
+		letter-spacing: -0.02em;
+		margin-bottom: 1.3em;
 	}
 	& h6 {
 	}
 
 	& p {
+		margin-bottom: 1.6em;
+
+		& ~ h5 {
+			margin-top: 1.9em;
+		}
 	}
 
 	& ul {
@@ -477,6 +488,7 @@ textarea {
 @import "../common/testimonials/testimonials";
 @import "../common/process/process";
 @import "../common/hero/hero";
+@import "../common/questions/questions";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -485,4 +497,5 @@ textarea {
 @import "pages/booking";
 @import "pages/partner";
 @import "pages/services";
+@import "pages/about";
 // ==== AND PAGES =====================================================
