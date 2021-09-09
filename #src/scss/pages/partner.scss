@@ -185,8 +185,8 @@
 
     &__col-1 {
         flex: 1 1 auto;
-      
-
+        position: relative;
+        z-index: 2;
         @media (min-width: 768px) {
             padding-right: 27px;
         }
@@ -194,6 +194,8 @@
 
     &__col-2 {
         flex: 0 0 59.87%;
+        position: relative;
+        z-index: 1;
     }
 
     &__item {
@@ -256,6 +258,18 @@
                 @media (max-width: $md3+px) {
                     margin-right: 30px;
                 }
+            }
+        }
+    }
+
+    &__bottom {
+        & .btn-default {
+            width: 100%;
+            
+            min-height: 65px;
+
+            @media (min-width: 768px) {
+                max-width: 385px;
             }
         }
     }

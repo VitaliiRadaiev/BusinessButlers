@@ -123,6 +123,22 @@
     display: flex;
     flex-wrap: wrap;
 
+    &.social_v2 {
+        & > li {
+            &:not(:last-child) {
+                margin-right: 28px;
+            }
+
+            & > a {
+                height: 62px;
+
+                @media (max-width: 575.98px) {
+                    height: 40px;
+                }
+            }
+        }
+    }   
+
     & > li {
         flex: 0 0 auto;
         margin-bottom: 20px;

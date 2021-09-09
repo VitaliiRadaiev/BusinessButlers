@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{
+    "white": "header_white",
+    })
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page contact-page _padding-top">
+        <section class="hero hero_v2 hero-has-form">
+            <div class="hero__bg">
+                <div class="hero__bg-layer-1">
+                    <img src="img/photo/hero-top-layer-2.svg" alt="">
+                </div>
+            </div>
+            <div class="container-lg">
+                <div class="hero__body">
+                    <form action="#" class="booking-form booking-form_dark">
+                        <div class="booking-form__body">
+                            <div class="booking-form__item">
+                                <div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+                                <div class="booking-form__input">
+                                    <img src="img/icons/location-form-icon.svg" alt="">
+                                    <input type="text" placeholder="Pickup Address">
+                                </div>
+                            </div>
+                            <div class="booking-form__item">
+                                <div class="booking-form__input">
+                                    <img src="img/icons/location-form-icon.svg" alt="">
+                                    <input type="text" placeholder="Delivery Address">
+                                </div>
+                            </div>
+                            <div class="booking-form__item size">
+                                <div class="booking-form__label text-center">Size</div>
+                                <div class="booking-form__radio-group">
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size" checked>
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="booking-form__radio-subtext">
+                                    Fits into a truck: Furniture, Construction Material, Shipping Pallets
+                                </div>
+                            </div>
+                            <div class="booking-form__item speed">
+                                <div class="booking-form__label text-center">Speed</div>
+                                <div class="booking-form__radio-group">
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed" checked>
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="booking-form__radio-subtext">
+                                    Within 3-4 hours, if ordered before 2 pm
+                                </div>
+                            </div>
+                            <div class="booking-form__item">
+                                <button class="btn-default" type="submit">Confirm Booking</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="hero__text-wrap">
+                        <div class="hero__text-wrap-col-1">
+                            <h1 class="hero__title-2 d-block">
+                                <strong>Contact</strong> Us
+                            </h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container-lg">
+                <div class="contact__body">
+                    <div class="contact__col-1">
+                        <div class="contact__item">
+                            <div class="contact__label">
+                                Phone
+                            </div>
+                            <a href="#" class="contact__link">
+                                +1800 961 373
+                            </a>
+                        </div>
+                        <div class="contact__item">
+                            <div class="contact__label">Email</div>
+                            <a href="#" class="contact__link">
+                                bookings@businessbutlers.com.au
+                            </a>
+                        </div>
+                        <div class="contact__item">
+                            <div class="contact__label">Social Media</div>
+                            <ul class="social social_v2">
+                                <li>
+                                    <a href="#">
+                                        <img class="img-svg" src="img/icons/instagram-b.svg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-svg" src="img/icons/facebook-b.svg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-svg" src="img/icons/youtube-b.svg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-svg" src="img/icons/linkedin-b.svg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact__col-2">
+                        <div id="map" class="contact__map"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <form action="#" class="apply-now-form">
+            <div class="container-md">
+                <h2 class="apply-now-form__title title-2">
+                    Get In Touch
+                </h2>
+                <div class="apply-now-form__subtitle">
+                    Leave your details with us by completing the form below and we’ll be in touch with you soon.
+                </div>
+                <div class="apply-now-form__body">
+                    <div class="apply-now-form__col-1">
+                        <div class="apply-now-form__item">
+                            <input class="input" type="text" placeholder="Your First & Last Name ">
+                        </div>
+                        <div class="apply-now-form__item">
+                            <input class="input" type="email" placeholder="Your Email">
+                        </div>
+                        <div class="apply-now-form__item">
+                            <input class="input _mask" type="text" placeholder="Your Phone">
+                        </div>
+                        <div class="apply-now-form__item">
+                           <div class="select-wrap">
+                               <select name="" class="_select">
+                                   <option value="" selected>White subject of the message</option>
+                                   <option value="1">highest price</option>
+                                   <option value="2">Lowest price</option>
+                               </select>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="apply-now-form__col-2">
+                        <div class="apply-now-form__item">
+                            <textarea class="textarea" placeholder="Your Message"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="apply-now-form__bottom text-center">
+                    <button class="btn-default btn-default_dark" type="submit">SUBMIT</button>
+                </div>
+            </div>
+        </form>
+        <div class="booking-form-wrap">
+            <div class="container-lg">
+                <form action="#" class="booking-form booking-form_dark">
+                    <div class="booking-form__body">
+                        <div class="booking-form__item">
+                            <div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+                            <div class="booking-form__input">
+                                <img src="img/icons/location-form-icon.svg" alt="">
+                                <input type="text" placeholder="Pickup Address">
+                            </div>
+                        </div>
+                        <div class="booking-form__item">
+                            <div class="booking-form__input">
+                                <img src="img/icons/location-form-icon.svg" alt="">
+                                <input type="text" placeholder="Delivery Address">
+                            </div>
+                        </div>
+                        <div class="booking-form__item size">
+                            <div class="booking-form__label text-center">Size</div>
+                            <div class="booking-form__radio-group">
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size" checked>
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="booking-form__radio-subtext">
+                                Fits into a truck: Furniture, Construction Material, Shipping Pallets
+                            </div>
+                        </div>
+                        <div class="booking-form__item speed">
+                            <div class="booking-form__label text-center">Speed</div>
+                            <div class="booking-form__radio-group">
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed" checked>
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="booking-form__radio-subtext">
+                                Within 3-4 hours, if ordered before 2 pm
+                            </div>
+                        </div>
+                        <div class="booking-form__item">
+                            <button class="btn-default" type="submit">Confirm Booking</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+        defer></script>
+</body>
+
+</html>
