@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{
+    "white": "header_white",
+    })
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page blog-page _padding-top">
+        <section class="hero hero_v2 hero-has-form">
+            <div class="hero__bg">
+                <div class="hero__bg-layer-1">
+                    <img src="img/photo/hero-top-layer-2.svg" alt="">
+                </div>
+            </div>
+            <div class="container-lg">
+                <div class="hero__body">
+                    <form action="#" class="booking-form booking-form_dark">
+                        <div class="booking-form__body">
+                            <div class="booking-form__item">
+                                <div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+                                <div class="booking-form__input">
+                                    <img src="img/icons/location-form-icon.svg" alt="">
+                                    <input type="text" placeholder="Pickup Address">
+                                </div>
+                            </div>
+                            <div class="booking-form__item">
+                                <div class="booking-form__input">
+                                    <img src="img/icons/location-form-icon.svg" alt="">
+                                    <input type="text" placeholder="Delivery Address">
+                                </div>
+                            </div>
+                            <div class="booking-form__item size">
+                                <div class="booking-form__label text-center">Size</div>
+                                <div class="booking-form__radio-group">
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size" checked>
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="booking-form__radio-subtext">
+                                    Fits into a truck: Furniture, Construction Material, Shipping Pallets
+                                </div>
+                            </div>
+                            <div class="booking-form__item speed">
+                                <div class="booking-form__label text-center">Speed</div>
+                                <div class="booking-form__radio-group">
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed" checked>
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="booking-form__radio-subtext">
+                                    Within 3-4 hours, if ordered before 2 pm
+                                </div>
+                            </div>
+                            <div class="booking-form__item">
+                                <button class="btn-default" type="submit">Confirm Booking</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="hero__text-wrap">
+                        <div class="hero__text-wrap-col-1">
+                            <h1 class="hero__title-2">
+                                <strong>Business Butlers </strong>
+                                Blog
+                            </h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="blog-list">
+            <div class="container-lg">
+                <div class="blog-list__items">
+                    <div class="blog-list__item">
+                        <a href="#" class="card-post">
+                            <div class="card-post__img ibg">
+                                <img src="img/photo/card-post-img-1.jpg" alt="">
+                            </div>
+                            <div class="card-post__content">
+                                <div class="card-post__head">
+                                    <h3 class="card-post__title">Heading of the article</h3>
+                                    <div class="card-post__date">11 May, 2021</div>
+                                </div>
+                                <div class="card-post__author">Chris Brow</div>
+                                <div class="card-post__text text">Our vision is to be Melbourne's premier provider of personalized business services, supporting our customers to grow their businesses & achieve their dreams. We want to set the benchmark for the level of service that businesses receive.</div>
+                                <div class="card-post__bottom">
+                                    <span href="#" class="btn-default btn-default_dark">Read more</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-list__item">
+                        <a href="#" class="card-post">
+                            <div class="card-post__img ibg">
+                                <img src="img/photo/card-post-img-2.jpg" alt="">
+                            </div>
+                            <div class="card-post__content">
+                                <div class="card-post__head">
+                                    <h3 class="card-post__title">Heading of the article</h3>
+                                    <div class="card-post__date">11 May, 2021</div>
+                                </div>
+                                <div class="card-post__author">Chris Brow</div>
+                                <div class="card-post__text text">Our vision is to be Melbourne's premier provider of personalized business services, supporting our customers to grow their businesses & achieve their dreams. We want to set the benchmark for the level of service that businesses receive.</div>
+                                <div class="card-post__bottom">
+                                    <span href="#" class="btn-default btn-default_dark">Read more</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-list__item">
+                        <a href="#" class="card-post">
+                            <div class="card-post__img ibg">
+                                <img src="img/photo/card-post-img-3.jpg" alt="">
+                            </div>
+                            <div class="card-post__content">
+                                <div class="card-post__head">
+                                    <h3 class="card-post__title">Heading of the article</h3>
+                                    <div class="card-post__date">11 May, 2021</div>
+                                </div>
+                                <div class="card-post__author">Chris Brow</div>
+                                <div class="card-post__text text">Our vision is to be Melbourne's premier provider of personalized business services, supporting our customers to grow their businesses & achieve their dreams. We want to set the benchmark for the level of service that businesses receive.</div>
+                                <div class="card-post__bottom">
+                                    <span href="#" class="btn-default btn-default_dark">Read more</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-list__item">
+                        <a href="#" class="card-post">
+                            <div class="card-post__img ibg">
+                                <img src="img/photo/card-post-img-4.jpg" alt="">
+                            </div>
+                            <div class="card-post__content">
+                                <div class="card-post__head">
+                                    <h3 class="card-post__title">Heading of the article</h3>
+                                    <div class="card-post__date">11 May, 2021</div>
+                                </div>
+                                <div class="card-post__author">Chris Brow</div>
+                                <div class="card-post__text text">Our vision is to be Melbourne's premier provider of personalized business services, supporting our customers to grow their businesses & achieve their dreams. We want to set the benchmark for the level of service that businesses receive.</div>
+                                <div class="card-post__bottom">
+                                    <span href="#" class="btn-default btn-default_dark">Read more</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-list__item">
+                        <a href="#" class="card-post">
+                            <div class="card-post__img ibg">
+                                <img src="img/photo/card-post-img-1.jpg" alt="">
+                            </div>
+                            <div class="card-post__content">
+                                <div class="card-post__head">
+                                    <h3 class="card-post__title">Heading of the article</h3>
+                                    <div class="card-post__date">11 May, 2021</div>
+                                </div>
+                                <div class="card-post__author">Chris Brow</div>
+                                <div class="card-post__text text">Our vision is to be Melbourne's premier provider of personalized business services, supporting our customers to grow their businesses & achieve their dreams. We want to set the benchmark for the level of service that businesses receive.</div>
+                                <div class="card-post__bottom">
+                                    <span href="#" class="btn-default btn-default_dark">Read more</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-list__item">
+                        <a href="#" class="card-post">
+                            <div class="card-post__img ibg">
+                                <img src="img/photo/card-post-img-2.jpg" alt="">
+                            </div>
+                            <div class="card-post__content">
+                                <div class="card-post__head">
+                                    <h3 class="card-post__title">Heading of the article</h3>
+                                    <div class="card-post__date">11 May, 2021</div>
+                                </div>
+                                <div class="card-post__author">Chris Brow</div>
+                                <div class="card-post__text text">Our vision is to be Melbourne's premier provider of personalized business services, supporting our customers to grow their businesses & achieve their dreams. We want to set the benchmark for the level of service that businesses receive.</div>
+                                <div class="card-post__bottom">
+                                    <span href="#" class="btn-default btn-default_dark">Read more</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-list__item">
+                        <a href="#" class="card-post">
+                            <div class="card-post__img ibg">
+                                <img src="img/photo/card-post-img-3.jpg" alt="">
+                            </div>
+                            <div class="card-post__content">
+                                <div class="card-post__head">
+                                    <h3 class="card-post__title">Heading of the article</h3>
+                                    <div class="card-post__date">11 May, 2021</div>
+                                </div>
+                                <div class="card-post__author">Chris Brow</div>
+                                <div class="card-post__text text">Our vision is to be Melbourne's premier provider of personalized business services, supporting our customers to grow their businesses & achieve their dreams. We want to set the benchmark for the level of service that businesses receive.</div>
+                                <div class="card-post__bottom">
+                                    <span href="#" class="btn-default btn-default_dark">Read more</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-list__item">
+                        <a href="#" class="card-post">
+                            <div class="card-post__img ibg">
+                                <img src="img/photo/card-post-img-4.jpg" alt="">
+                            </div>
+                            <div class="card-post__content">
+                                <div class="card-post__head">
+                                    <h3 class="card-post__title">Heading of the article</h3>
+                                    <div class="card-post__date">11 May, 2021</div>
+                                </div>
+                                <div class="card-post__author">Chris Brow</div>
+                                <div class="card-post__text text">Our vision is to be Melbourne's premier provider of personalized business services, supporting our customers to grow their businesses & achieve their dreams. We want to set the benchmark for the level of service that businesses receive.</div>
+                                <div class="card-post__bottom">
+                                    <span href="#" class="btn-default btn-default_dark">Read more</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-list__bottom">
+                    <a href="#">
+                        SEE ALL
+                        <img src="img/icons/chevron-thin-down.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-form-wrap">
+            <div class="container-lg">
+                <form action="#" class="booking-form booking-form_dark">
+                    <div class="booking-form__body">
+                        <div class="booking-form__item">
+                            <div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+                            <div class="booking-form__input">
+                                <img src="img/icons/location-form-icon.svg" alt="">
+                                <input type="text" placeholder="Pickup Address">
+                            </div>
+                        </div>
+                        <div class="booking-form__item">
+                            <div class="booking-form__input">
+                                <img src="img/icons/location-form-icon.svg" alt="">
+                                <input type="text" placeholder="Delivery Address">
+                            </div>
+                        </div>
+                        <div class="booking-form__item size">
+                            <div class="booking-form__label text-center">Size</div>
+                            <div class="booking-form__radio-group">
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size" checked>
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="booking-form__radio-subtext">
+                                Fits into a truck: Furniture, Construction Material, Shipping Pallets
+                            </div>
+                        </div>
+                        <div class="booking-form__item speed">
+                            <div class="booking-form__label text-center">Speed</div>
+                            <div class="booking-form__radio-group">
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed" checked>
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="booking-form__radio-subtext">
+                                Within 3-4 hours, if ordered before 2 pm
+                            </div>
+                        </div>
+                        <div class="booking-form__item">
+                            <button class="btn-default" type="submit">Confirm Booking</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+        defer></script>
+</body>
+
+</html>

@@ -5500,6 +5500,173 @@ textarea {
   overflow: hidden;
 }
 
+.blog-page .hero.hero_v2 {
+  margin-bottom: 58px;
+}
+
+.blog-page .hero.hero_v2 .hero__text-wrap-col-1 {
+  max-width: 576px;
+  width: 100%;
+}
+
+.blog-page .hero.hero_v2 .hero__title-2 {
+  max-width: 576px;
+}
+
+.blog-list {
+  margin-bottom: 137px;
+}
+
+.blog-list__items {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.blog-list__item {
+  margin-bottom: 46px;
+}
+
+.blog-list__bottom {
+  position: relative;
+  text-align: center;
+  max-width: 1160px;
+  margin: 68px auto 0;
+}
+
+.blog-list__bottom:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  z-index: 1;
+  background-color: #858d8f;
+}
+
+.blog-list__bottom > a {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #858d8f;
+  border-radius: 30px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 36px;
+  min-width: 150px;
+  font-size: 12px;
+  line-height: 1.2em;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #858d8f;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.blog-list__bottom > a img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 12px;
+  height: auto;
+  margin-left: 7px;
+}
+
+.card-post {
+  display: block;
+  padding: 30px max(20px, 3.8%) 21px max(20px, 5.2%);
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  color: #0E2A4E;
+}
+
+.card-post__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 240px;
+  height: 180px;
+  margin-right: 18px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-post__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.card-post__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 14px;
+}
+
+.card-post__title {
+  margin-right: 25px;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 1.22em;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.card-post__date {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.22em;
+}
+
+.card-post__author {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 149%;
+  margin-bottom: 12px;
+}
+
+.card-post__text {
+  font-size: 17px;
+  line-height: 149%;
+}
+
+.card-post__bottom {
+  text-align: right;
+}
+
+.card-post__bottom .btn-default {
+  min-height: 36px;
+  min-width: 117px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 122%;
+  padding: 8px 20px;
+}
+
 @media (min-width: 480px) {
   .header__logo {
     margin-left: -20px;
@@ -5520,6 +5687,12 @@ textarea {
   }
 
   .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .card-post {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5780,6 +5953,14 @@ textarea {
 
   .contact__link:hover {
     color: #3b6ca1;
+  }
+
+  .blog-page .hero.hero_v2 .hero__text-wrap {
+    padding-top: 100px;
+  }
+
+  .blog-list__bottom > a:hover {
+    background-color: #0E2A4E;
   }
 }
 
@@ -6449,6 +6630,14 @@ textarea {
   .contact__map {
     height: 400px;
   }
+
+  .blog-list {
+    margin-bottom: 60px;
+  }
+
+  .card-post__img {
+    width: 180px;
+  }
 }
 
 @media (max-width: 767.98p) {
@@ -6618,6 +6807,18 @@ textarea {
   .contact__link {
     font-size: 18px;
   }
+
+  .card-post__img {
+    width: 100%;
+  }
+
+  .card-post__text {
+    margin-bottom: 10px;
+  }
+
+  .card-post__bottom .btn-default {
+    width: 100%;
+  }
 }
 
 @media (max-width: 479.98px) {
@@ -6748,5 +6949,9 @@ textarea {
 
   .services-deliver__item-title {
     font-size: 24px;
+  }
+
+  .card-post__title {
+    font-size: 21px;
   }
 }
