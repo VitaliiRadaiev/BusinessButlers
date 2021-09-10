@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{
+    "white": "header_white",
+    })
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page article-page _padding-top">
+        <section class="hero hero_v2 hero-has-form">
+            <div class="hero__bg">
+                <div class="hero__bg-layer-1">
+                    <img src="img/photo/hero-top-layer-2.svg" alt="">
+                </div>
+            </div>
+            <div class="container-lg">
+                <div class="hero__body">
+                    <form action="#" class="booking-form booking-form_dark">
+                        <div class="booking-form__body">
+                            <div class="booking-form__item">
+                                <div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+                                <div class="booking-form__input">
+                                    <img src="img/icons/location-form-icon.svg" alt="">
+                                    <input type="text" placeholder="Pickup Address">
+                                </div>
+                            </div>
+                            <div class="booking-form__item">
+                                <div class="booking-form__input">
+                                    <img src="img/icons/location-form-icon.svg" alt="">
+                                    <input type="text" placeholder="Delivery Address">
+                                </div>
+                            </div>
+                            <div class="booking-form__item size">
+                                <div class="booking-form__label text-center">Size</div>
+                                <div class="booking-form__radio-group">
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="size" checked>
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="booking-form__radio-subtext">
+                                    Fits into a truck: Furniture, Construction Material, Shipping Pallets
+                                </div>
+                            </div>
+                            <div class="booking-form__item speed">
+                                <div class="booking-form__label text-center">Speed</div>
+                                <div class="booking-form__radio-group">
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed">
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+                                        </div>
+                                    </label>
+                                    <label class="booking-form__radio">
+                                        <input type="radio" name="speed" checked>
+                                        <div class="booking-form__radio-icon">
+                                            <img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="booking-form__radio-subtext">
+                                    Within 3-4 hours, if ordered before 2 pm
+                                </div>
+                            </div>
+                            <div class="booking-form__item">
+                                <button class="btn-default" type="submit">Confirm Booking</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="hero__text-wrap">
+                        <div class="hero__text-wrap-col-1">
+                            <h1 class="hero__title-2">
+                                <strong>Heading of the</strong>
+                                 Article
+                            </h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="article">
+            <div class="container-md article__body">
+                <a href="#" class="link-back">
+                    <img class="img-svg" src="img/icons/arrow-left.svg" alt="">
+                    Back to Articles
+                </a>
+                <div class="author">
+                    <div class="author__photo ibg">
+                        <img src="img/photo/author-1.jpg" alt="">
+                    </div>
+                    <div class="author__content">
+                        <div class="author__name">
+                            Chris Brow
+                        </div>
+                        <div class="author__time">
+                            <p>
+                                10:30am
+                            </p>
+                            <p>
+                                11 May, 2021
+                            </p>
+                        </div>
+                        <div class="author__action action-icon">
+                            <a href="#">
+                                <img src="img/icons/action-icon-1.svg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/icons/action-icon-2.svg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/icons/action-icon-3.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="article__title">
+                    Heading of the article
+                </h2>
+                <div class="article__subtitle">
+                    Loren ipsun dolor sit amet
+                </div>
+                <div class="article__text text-content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                    </p>
+
+                    <figure>
+                        <img src="img/photo/article-img.jpg" alt="">
+                    </figure>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                    </p>
+                </div>
+
+                <div class="article-testimonials">
+                    <div class="article-testimonials__item">
+                        <div class="article-testimonials__card">
+                            <div class="article-testimonials__card-col-1">
+                                <div class="article-testimonials__card-photo ibg">
+                                    <img src="img/photo/author-2.jpg" alt="">
+                                </div>
+                                <div class="article-testimonials__card-date">
+                                    <img src="img/icons/date-icon.svg" alt="">
+                                    <p>
+                                        29
+                                    </p>
+                                    <p>
+                                        February 
+                                    </p>
+                                </div>
+                                <div class="article-testimonials__card-action action-icon">
+                                    <a href="#">
+                                        <img src="img/icons/action-icon-1.svg" alt="">
+                                    </a>
+                                    <a href="#">
+                                        <img src="img/icons/action-icon-2.svg" alt="">
+                                    </a>
+                                    <a href="#">
+                                        <img src="img/icons/action-icon-3.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="article-testimonials__card-col-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                                </p>
+                                <p>
+                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat, ullamcorper suscipit lobortis nisl ut aliquip. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-testimonials__item">
+                        <div class="article-testimonials__card">
+                            <div class="article-testimonials__card-col-1">
+                                <div class="article-testimonials__card-photo ibg">
+                                    <img src="img/photo/author-3.jpg" alt="">
+                                </div>
+                                <div class="article-testimonials__card-date">
+                                    <img src="img/icons/date-icon.svg" alt="">
+                                    <p>
+                                        29
+                                    </p>
+                                    <p>
+                                        may
+                                    </p>
+                                </div>
+                                <div class="article-testimonials__card-action action-icon">
+                                    <a href="#">
+                                        <img src="img/icons/action-icon-1.svg" alt="">
+                                    </a>
+                                    <a href="#">
+                                        <img src="img/icons/action-icon-2.svg" alt="">
+                                    </a>
+                                    <a href="#">
+                                        <img src="img/icons/action-icon-3.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="article-testimonials__card-col-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                                </p>
+                                <p>
+                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat, ullamcorper suscipit lobortis nisl ut aliquip. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-testimonials__item">
+                        <p> 
+                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="booking-form-wrap">
+            <div class="container-lg">
+                <form action="#" class="booking-form booking-form_dark">
+                    <div class="booking-form__body">
+                        <div class="booking-form__item">
+                            <div class="booking-form__label"><strong>São Paulo, São Paulo, Brazil</strong></div>
+                            <div class="booking-form__input">
+                                <img src="img/icons/location-form-icon.svg" alt="">
+                                <input type="text" placeholder="Pickup Address">
+                            </div>
+                        </div>
+                        <div class="booking-form__item">
+                            <div class="booking-form__input">
+                                <img src="img/icons/location-form-icon.svg" alt="">
+                                <input type="text" placeholder="Delivery Address">
+                            </div>
+                        </div>
+                        <div class="booking-form__item size">
+                            <div class="booking-form__label text-center">Size</div>
+                            <div class="booking-form__radio-group">
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-1.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-2.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="size" checked>
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/size-icon-3.svg" alt="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="booking-form__radio-subtext">
+                                Fits into a truck: Furniture, Construction Material, Shipping Pallets
+                            </div>
+                        </div>
+                        <div class="booking-form__item speed">
+                            <div class="booking-form__label text-center">Speed</div>
+                            <div class="booking-form__radio-group">
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-1.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-2.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed">
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-3.svg" alt="">
+                                    </div>
+                                </label>
+                                <label class="booking-form__radio">
+                                    <input type="radio" name="speed" checked>
+                                    <div class="booking-form__radio-icon">
+                                        <img class="img-svg" src="img/icons/speed-icon-4.svg" alt="">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="booking-form__radio-subtext">
+                                Within 3-4 hours, if ordered before 2 pm
+                            </div>
+                        </div>
+                        <div class="booking-form__item">
+                            <button class="btn-default" type="submit">Confirm Booking</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+        defer></script>
+</body>
+
+</html>
