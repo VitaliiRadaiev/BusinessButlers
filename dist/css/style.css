@@ -3430,6 +3430,10 @@ textarea {
   line-height: 149%;
 }
 
+.hero__bottom .hero__title-2 {
+  color: #0E2A4E;
+}
+
 .hero__title-2 {
   max-width: 426px;
   margin: 0 auto 11px;
