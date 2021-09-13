@@ -6922,12 +6922,13 @@ textarea {
   }
 
   .booking-tabs__item > span {
-    margin-right: 0;
+    margin-right: 10px;
   }
 
   .booking-tabs__item img,
   .booking-tabs__item svg {
-    display: none;
+    width: 40px;
+    height: auto;
   }
 
   .booking-tabs__item.active:before {
@@ -7342,6 +7343,11 @@ textarea {
   .booking-tabs__item {
     font-size: 14px;
     padding: 10px 10px;
+  }
+
+  .booking-tabs__item img,
+  .booking-tabs__item svg {
+    width: 20px;
   }
 
   .services-deliver__item-title {
