@@ -37,6 +37,7 @@ window.addEventListener('load', function () {
 	
 	@@include('pages/home.js');
 	@@include('pages/about.js');
+	@@include('pages/booking.js');
 
 
 	$('img.img-svg').each(function(){
