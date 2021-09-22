@@ -141,3 +141,32 @@ document.addEventListener('keydown', function(e) {
 		}
 	})();
 // === AND Polyfill ===
+
+window.cAlert = (text) => {
+	let popup = document.querySelector('#alertPopup');
+	if(!popup) return;
+
+	let title = popup.querySelector('.popup-title');
+	let textWrap = popup.querySelector('.popup-text');
+
+	if(typeof text == 'object') {
+		if(text.title) {
+			title.classList.remove('d-none');
+			title.innerText = text.title.toString();
+		} else {
+			title.classList.add('d-none');
+		}
+
+		if(text.text) {
+			textWrap.classList.remove('d-none');
+			textWrap.innerText = text.text.toString();
+		} else {
+			textWrap.classList.add('d-none');
+		}
+	} else {
+		title.classList.add('d-none');
+		textWrap.classList.remove('d-none');
+		textWrap.innerText = text.toString();
+	}
+	popupOpen(popup)
+} 

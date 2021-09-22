@@ -4,7 +4,7 @@ let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return
 
 
 window.addEventListener('load', function () {
-	
+
 	document.body.classList.add('is-load');
 
 	// ==== ADD PADDING-TOP ================================
@@ -12,19 +12,36 @@ window.addEventListener('load', function () {
 		let wrapper = document.querySelector('._padding-top');
 		if (wrapper) {
 			let header = document.querySelector('.header');
-			if(header) {
+			if (header) {
 				const setPedding = () => wrapper.style.paddingTop = header.clientHeight + 'px';
 				setPedding();
 				let id = setInterval(setPedding, 200);
 				setTimeout(() => {
 					clearInterval(id);
-				},1000)
+				}, 1000)
 				window.addEventListener('resize', setPedding);
 			}
-			
+
 		}
 	}
 	// ==== AND ADD PADDING-TOP ================================
+
+	function addPopup() {
+		document.body.insertAdjacentHTML('beforeend',
+			`<div class="popup" id="alertPopup">
+				<div class="popup_body">
+					<div class="popup_content">
+						<div class="popup-close close-popup"><span></span></div>
+						<h2 class="popup-title title-2"></h2>
+						<div class="popup-text"></div>
+						<div class="btn-default btn-default_dark close-popup"> OK</div>
+					</div>
+				</div>
+			</div>`
+		)
+	}
+
+	addPopup()
 
 	@@include('_function.js');
 
@@ -33,40 +50,43 @@ window.addEventListener('load', function () {
 	@@include('../common/rating/rating.js');
 	@@include('../common/testimonials/testimonials.js');
 	@@include('../common/questions/questions.js');
-	
-	
+	@@include('../common/file-block/file-block.js');
+
+	@@include('../common/popup/popup.js');
+
+
 	@@include('pages/home.js');
 	@@include('pages/about.js');
 	@@include('pages/booking.js');
 
 
-	$('img.img-svg').each(function(){
+	$('img.img-svg').each(function () {
 		var $img = $(this);
 		var imgClass = $img.attr('class');
 		var imgURL = $img.attr('src');
-		$.get(imgURL, function(data) {
-		  var $svg = $(data).find('svg');
-		  if(typeof imgClass !== 'undefined') {
-			$svg = $svg.attr('class', imgClass+' replaced-svg');
-		  }
-		  $svg = $svg.removeAttr('xmlns:a');
-		  if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-			$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-		  }
-		  $img.replaceWith($svg);
+		$.get(imgURL, function (data) {
+			var $svg = $(data).find('svg');
+			if (typeof imgClass !== 'undefined') {
+				$svg = $svg.attr('class', imgClass + ' replaced-svg');
+			}
+			$svg = $svg.removeAttr('xmlns:a');
+			if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+				$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+			}
+			$img.replaceWith($svg);
 		}, 'xml');
-	  });
-	  
+	});
+
 	let bookingOptions = document.querySelector('.b-form__options');
-	if(bookingOptions) {
+	if (bookingOptions) {
 		let textItems = bookingOptions.querySelectorAll('.b-form__text');
 		setSameHeight(textItems)
 	}
 	inputOnlyNum()
 });
 
-window.addEventListener('DOMContentLoaded', function() {
-	if(isMobile.any()) {
+window.addEventListener('DOMContentLoaded', function () {
+	if (isMobile.any()) {
 		document.body.classList.add('_is-mobile');
 	}
 

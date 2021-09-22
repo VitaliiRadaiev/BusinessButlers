@@ -4,7 +4,7 @@ let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return
 
 
 window.addEventListener('load', function () {
-	
+
 	document.body.classList.add('is-load');
 
 	// ==== ADD PADDING-TOP ================================
@@ -12,19 +12,36 @@ window.addEventListener('load', function () {
 		let wrapper = document.querySelector('._padding-top');
 		if (wrapper) {
 			let header = document.querySelector('.header');
-			if(header) {
+			if (header) {
 				const setPedding = () => wrapper.style.paddingTop = header.clientHeight + 'px';
 				setPedding();
 				let id = setInterval(setPedding, 200);
 				setTimeout(() => {
 					clearInterval(id);
-				},1000)
+				}, 1000)
 				window.addEventListener('resize', setPedding);
 			}
-			
+
 		}
 	}
 	// ==== AND ADD PADDING-TOP ================================
+
+	function addPopup() {
+		document.body.insertAdjacentHTML('beforeend',
+			`<div class="popup" id="alertPopup">
+				<div class="popup_body">
+					<div class="popup_content">
+						<div class="popup-close close-popup"><span></span></div>
+						<h2 class="popup-title title-2"></h2>
+						<div class="popup-text"></div>
+						<div class="btn-default btn-default_dark close-popup"> OK</div>
+					</div>
+				</div>
+			</div>`
+		)
+	}
+
+	addPopup()
 
 	//SlideToggle
 let _slideUp = (target, duration = 500) => {
@@ -835,8 +852,208 @@ function setrating(th, val) {
     createTabs('.questions', '.questions__tabs-trigger', '.questions__tabs-content');
     
 };
-	
-	
+	{
+    (function uploadFileHandler() {
+        let files = []
+        let inputWrapItems = document.querySelectorAll('.file-block');
+        if(inputWrapItems.length) {
+            inputWrapItems.forEach(inputWrap => {
+                let input = inputWrap.querySelector('input[type="file"]');
+                let div = document.createElement('div');
+                div.className = 'file-block__result';
+                inputWrap.prepend(div);
+                const changeHandler = (event) => {
+                    if (!event.target.files.length) {
+                        return
+                    }
+    
+                    files = Array.from(event.target.files)
+    
+                    let result = files.map(item => item.name);
+                    div.innerText = result.join(', ');
+                }
+    
+                input.addEventListener('change', changeHandler);
+            })
+        }
+    })()
+};
+
+	// ==== Popup form handler====
+
+const popupLinks = document.querySelectorAll('.popup-link');
+const body = document.querySelector('body');
+const lockPadding = document.querySelectorAll('.lock-padding');
+
+let unlock = true;
+
+const timeout = 800;
+
+if(popupLinks.length > 0) {
+	for (let index = 0; index < popupLinks.length; index++) {
+		const popupLink = popupLinks[index];
+		popupLink.addEventListener('click', function(e) {
+			const popupName = popupLink.getAttribute('href').replace('#', '');
+			const curentPopup = document.getElementById(popupName);
+			popupOpen(curentPopup);
+			e.preventDefault();
+		});
+	}
+}
+
+
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+if(popupCloseIcon.length > 0) {
+	for(let index = 0; index < popupCloseIcon.length; index++) {
+		const el = popupCloseIcon[index];
+		el.addEventListener('click', function(e) {
+			popupClose(el.closest('.popup'));
+			e.preventDefault();
+		});
+	}
+}
+
+function popupOpen(curentPopup) {
+	if(curentPopup && unlock) {
+		const popupActive = document.querySelector('.popup.open');
+		if (popupActive) {
+			popupClose(popupActive, false);
+		} else {
+			bodyLock();
+		}
+		curentPopup.classList.add('open');
+		curentPopup.addEventListener('click', function(e) {
+			if(!e.target.closest('.popup_content')) {
+				popupClose(e.target.closest('.popup'));
+			}
+		});
+
+	}
+}
+
+function popupClose(popupActive, doUnlock = true) {
+	if(unlock) {
+		popupActive.classList.remove('open');
+		if(doUnlock) {
+			bodyUnlock();
+		}
+	}
+}
+
+function bodyLock() {
+	const lockPaddingValue = window.innerWidth - document.querySelector('body').offsetWidth + 'px';
+	let targetPadding = document.querySelectorAll('._lp');
+	if(targetPadding.length) {
+		for (let index = 0; index < targetPadding.length; index++) {
+			const el = targetPadding[index];
+			el.style.paddingRight = lockPaddingValue;
+		}
+	}
+
+	if(lockPadding.length > 0) {
+		for (let index = 0; index < lockPadding.length; index++) {
+			const el = lockPadding[index];
+			el.style.paddingRight = lockPaddingValue;
+		}
+	}
+
+	body.style.paddingRight = lockPaddingValue;
+	body.classList.add('lock');
+
+	unlock = false;
+	setTimeout(function() {
+		unlock = true;
+	}, timeout);
+}
+
+function bodyUnlock() {
+	let targetPadding = document.querySelectorAll('._lp');
+
+	setTimeout(function() {
+		if(targetPadding.length) {
+			for (let index = 0; index < targetPadding.length; index++) {
+				const el = targetPadding[index];
+				el.style.paddingRight = '0px';
+			}
+		}
+
+		for( let index = 0; index < lockPadding.length; index++) {
+			const el = lockPadding[index];
+			el.style.paddingRight = '0px';
+		}
+
+		body.style.paddingRight = '0px';
+		body.classList.remove('lock');
+	}, timeout);
+
+	unlock = false;
+	setTimeout(function() { 
+		unlock = true;
+	}, timeout);
+}
+
+document.addEventListener('keydown', function(e) {
+	if(e.which === 27) {
+		const popupActive = document.querySelector('.popup.open');
+		popupClose(popupActive);
+	}
+});
+
+// === Polyfill ===
+	(function() {
+		if(!Element.prototype.closest) {
+			Element.prototype.closest = function(css) {
+				var node = this;
+				while(node) {
+					if(node.matches(css)) return node;
+					else node == node.parentElement;
+				}
+				return null;
+			};
+		}
+	})();
+
+	(function() {
+		if(!Element.prototype.matches) {
+			Element.prototype.matches = Element.prototype.matchesSelector ||
+				Element.prototype.webkitMatchesSelector ||
+				Element.prototype.mozMatchesSelector ||
+				Element.prototype.mozMatchesSelector;
+		}
+	})();
+// === AND Polyfill ===
+
+window.cAlert = (text) => {
+	let popup = document.querySelector('#alertPopup');
+	if(!popup) return;
+
+	let title = popup.querySelector('.popup-title');
+	let textWrap = popup.querySelector('.popup-text');
+
+	if(typeof text == 'object') {
+		if(text.title) {
+			title.classList.remove('d-none');
+			title.innerText = text.title.toString();
+		} else {
+			title.classList.add('d-none');
+		}
+
+		if(text.text) {
+			textWrap.classList.remove('d-none');
+			textWrap.innerText = text.text.toString();
+		} else {
+			textWrap.classList.add('d-none');
+		}
+	} else {
+		title.classList.add('d-none');
+		textWrap.classList.remove('d-none');
+		textWrap.innerText = text.toString();
+	}
+	popupOpen(popup)
+} 
+;
+
+
 	{
     if (document.documentElement.clientWidth >= 768) {
         let infoDeliveringSizesText = document.querySelectorAll('.info-delivering-sizes__text');
@@ -873,51 +1090,122 @@ function setrating(th, val) {
         let columnNumber = deliveryAddressBlock.querySelector('._number');
         let radioSingleAddressDelivery = deliveryAddressBlock.querySelector('#singleAddressDelivery');
         let radioMultipleAddressDelivery = deliveryAddressBlock.querySelector('#multipleAddressDelivery');
+        let pickupAddressInput = deliveryAddressBlock.querySelector('#pickupAddressInput');
+        let multipleAddressInput = deliveryAddressBlock.querySelector('#multipleAddressInput');
+
 
         if(radioSingleAddressDelivery && radioMultipleAddressDelivery && columnNumber) {
             radioSingleAddressDelivery.addEventListener('change', (e) => {
                 if(e.target.checked) {
                     columnNumber.setAttribute('disabled', '');
+                    setPickupItems(1);
+                    setMultipleItems(1);
                 }
             })
 
             radioMultipleAddressDelivery.addEventListener('change', (e) => {
                 if(e.target.checked) {
                     columnNumber.removeAttribute('disabled');
+                    setPickupItems(pickupAddressInput.value);
+                    setMultipleItems(multipleAddressInput.value);
+                }
+            })
+        }
+
+        if(pickupAddressInput && multipleAddressInput) {
+            setPickupItems(pickupAddressInput.value);
+            setMultipleItems(multipleAddressInput.value);
+
+            pickupAddressInput.addEventListener('input', (e) => {
+                if(e.target.value < 1) {
+                    setPickupItems(1);
+                } else {
+                    setPickupItems(pickupAddressInput.value);
+                }
+            })
+            pickupAddressInput.addEventListener('blur', (e) => {
+                if(e.target.value < 1) {
+                    pickupAddressInput.value = 1;
+                } else if(e.target.value > 6) {
+                    pickupAddressInput.value = 6;
+                }
+            })
+
+            multipleAddressInput.addEventListener('input', (e) => {
+                if(e.target.value < 1) {
+                    setMultipleItems(1);
+                } else {
+                    setMultipleItems(multipleAddressInput.value);
+                }
+            })
+            multipleAddressInput.addEventListener('blur', (e) => {
+                if(e.target.value < 1) {
+                    multipleAddressInput.value = 1;
+                } else if(e.target.value > 6) {
+                    multipleAddressInput.value = 6;
                 }
             })
         }
     }
+
+    function setActiveItems(wrap, count) {
+        let items = Array.from(wrap.children);
+        
+        items.forEach(item => {
+            item.classList.remove('active');
+        })
+
+        items.forEach((item, index) => {
+            if(index < count) {
+                item.classList.add('active');
+            } else {
+                return;
+            }
+        })
+    }
+
+    function setPickupItems(count) {
+        let pickupAddress = document.querySelector('.pickup-address');
+        if(!pickupAddress) return
+        setActiveItems(pickupAddress, count);
+    }
+    function setMultipleItems(count) {
+        let pickupAddress = document.querySelector('.multiple-address');
+        if(!pickupAddress) return
+        setActiveItems(pickupAddress, count);
+    }
+
+
 };
 
 
-	$('img.img-svg').each(function(){
+	$('img.img-svg').each(function () {
 		var $img = $(this);
 		var imgClass = $img.attr('class');
 		var imgURL = $img.attr('src');
-		$.get(imgURL, function(data) {
-		  var $svg = $(data).find('svg');
-		  if(typeof imgClass !== 'undefined') {
-			$svg = $svg.attr('class', imgClass+' replaced-svg');
-		  }
-		  $svg = $svg.removeAttr('xmlns:a');
-		  if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-			$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-		  }
-		  $img.replaceWith($svg);
+		$.get(imgURL, function (data) {
+			var $svg = $(data).find('svg');
+			if (typeof imgClass !== 'undefined') {
+				$svg = $svg.attr('class', imgClass + ' replaced-svg');
+			}
+			$svg = $svg.removeAttr('xmlns:a');
+			if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+				$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+			}
+			$img.replaceWith($svg);
 		}, 'xml');
-	  });
-	  
+	});
+
 	let bookingOptions = document.querySelector('.b-form__options');
-	if(bookingOptions) {
+	if (bookingOptions) {
 		let textItems = bookingOptions.querySelectorAll('.b-form__text');
 		setSameHeight(textItems)
 	}
 	inputOnlyNum()
 });
 
-window.addEventListener('DOMContentLoaded', function() {
-	if(isMobile.any()) {
+window.addEventListener('DOMContentLoaded', function () {
+	if (isMobile.any()) {
 		document.body.classList.add('_is-mobile');
 	}
 

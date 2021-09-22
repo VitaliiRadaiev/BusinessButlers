@@ -89,13 +89,13 @@
                                 Number of Addresses
                             </div>
                             <label class="address-amount mb-40px">
-                                <input class="_only-num" type="text" value="1" checked>
+                                <input id="pickupAddressInput" class="_only-num" type="text" value="1" checked>
                                 <div class="address-amount__text">
                                     No Pickup Addresses
                                 </div>
                             </label>
                             <label class="address-amount mb-40px">
-                                <input class="_only-num" type="text" value="6" checked>
+                                <input id="multipleAddressInput" class="_only-num" type="text" value="6" checked>
                                 <div class="address-amount__text">
                                     Multiple Address Delivery
                                 </div>
@@ -103,113 +103,152 @@
                         </div>
                     </div>
                 </div>
-                <div class="b-form__row">
-                    <div class="flex flex-md">
-                        <div class="b-form__item width-50">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Pickup Address">
+                <div id="deliveryAddressesItems" class="b-form__row">
+                    <div class="pickup-address">
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Pickup Address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Pickup Address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Pickup Address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Pickup Address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Pickup Address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Pickup Address">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-md">
-                        <div class="b-form__item width-50">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Address #1">
+                    <div class="multiple-address">
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Address #1">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Name">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input _mask" type="text" placeholder="Phone">
+                                </div>
                             </div>
                         </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Name">
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Address #2">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Name">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input _mask" type="text" placeholder="Phone">
+                                </div>
                             </div>
                         </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input _mask" type="text" placeholder="Phone">
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Address #3">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Name">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input _mask" type="text" placeholder="Phone">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex flex-md">
-                        <div class="b-form__item width-50">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Address #2">
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Address #4">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Name">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input _mask" type="text" placeholder="Phone">
+                                </div>
                             </div>
                         </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Name">
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Address #5">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Name">
+                                </div>
+                            </div>
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input _mask" type="text" placeholder="Phone">
+                                </div>
                             </div>
                         </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input _mask" type="text" placeholder="Phone">
+                        <div class="flex flex-md">
+                            <div class="b-form__item width-50">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Address #6">
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-md">
-                        <div class="b-form__item width-50">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Address #3">
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input" type="text" placeholder="Delivery Name">
+                                </div>
                             </div>
-                        </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Name">
-                            </div>
-                        </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input _mask" type="text" placeholder="Phone">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-md">
-                        <div class="b-form__item width-50">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Address #4">
-                            </div>
-                        </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Name">
-                            </div>
-                        </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input _mask" type="text" placeholder="Phone">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-md">
-                        <div class="b-form__item width-50">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Address #5">
-                            </div>
-                        </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Name">
-                            </div>
-                        </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input _mask" type="text" placeholder="Phone">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-md">
-                        <div class="b-form__item width-50">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Address #6">
-                            </div>
-                        </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input" type="text" placeholder="Delivery Name">
-                            </div>
-                        </div>
-                        <div class="b-form__item width-25">
-                            <div class="b-form__input">
-                                <input class="input _mask" type="text" placeholder="Phone">
+                            <div class="b-form__item width-25">
+                                <div class="b-form__input">
+                                    <input class="input _mask" type="text" placeholder="Phone">
+                                </div>
                             </div>
                         </div>
                     </div>

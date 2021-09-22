@@ -284,6 +284,20 @@
     }
 }
 
+.pickup-address, .multiple-address {
+    & > div {
+        display: none !important;
+
+        &.active {
+            display: block !important;
+
+            @media (min-width: 768px) {
+                display: flex !important;
+            }
+        }
+    }
+}
+
 .flex-col-2 {
     @media (min-width: 992px) {
         display: flex;
