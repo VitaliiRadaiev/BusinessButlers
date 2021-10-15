@@ -10,11 +10,12 @@
         font-size: 6px;
     }
     @media (max-width: 690px) {
-        font-size: 4px;
+        font-size: 5px;
     }
 
-    @media (max-width: $md4+px) {
-        font-size: 3px;
+    @media (max-width: 575.98px) {
+        font-size: 10px;
+        padding-bottom: 0;
     }
 
     @media (max-width: $md3+px) {
@@ -59,17 +60,18 @@
         flex-wrap: wrap;
         margin: 0 -0.5em;
         
-        height: 64em;
-        @media (min-width: 1130px) {
+        
+        @media (min-width: 576px) {
+            height: 64em;
         }
     }
 
     &__list-item {
         padding: 0 0.5em;
         flex: 0 1 25%;
-       // margin-bottom: 14em;
+        margin-bottom: 14em;
 
-       // @media (min-width: 1130px) {
+       @media (min-width: 576px) {
             margin-bottom: 0;
             position: absolute;
             width: calc(25% - 0.5em);
@@ -90,11 +92,11 @@
                 left: 75%;
                 bottom: 11%;
             }
-       // }
+        }
 
-        // @media (max-width: $md2+px) {
-        //     flex: 0 1 50%;
-        // }
+        @media (max-width: $md2+px) {
+            flex: 0 1 50%;
+        }
     }
 
     &__card {
@@ -103,13 +105,13 @@
         border-radius: 0.9em;
         padding: 3.3em 1.5em 2em;
 
-        // @media (max-width: 1129.98px) {
-        //     height: 100%;
-        // }
+        @media (max-width: 1129.98px) {
+            height: 100%;
+        }
 
-        // @media (max-width: 575.98px) {
-        //     padding: 2em 1em 1.5em;
-        // }
+        @media (max-width: 575.98px) {
+            padding: 2em 1em 1.5em;
+        }
     }
 
     &__card-icon {
@@ -119,10 +121,10 @@
         height: 5.8em;
         margin-bottom: 1em;
 
-        // @media (max-width: 575.98px) {
-        //     height: 4em;
-        //     margin-bottom: 0.6em;
-        // }
+        @media (max-width: 575.98px) {
+            height: 4em;
+            margin-bottom: 0.6em;
+        }
 
         & img {
             max-height: 100%;
@@ -140,18 +142,18 @@
         color: $mainColor;
         margin-bottom: 0.35em;
 
-        // @media (max-width: 575.98px) {
-        //     font-size: 2em;
-        //     margin-bottom: 0.3em;
-        // }
+        @media (max-width: 575.98px) {
+            font-size: 2em;
+            margin-bottom: 0.3em;
+        }
     }
 
     &__card-text {
         color: $textColorLight;
         font-size: 1.8em !important;
-        // @media (max-width: 575.98px) {
-        //     font-size: 1.6em;
-        // }
+        @media (max-width: 575.98px) {
+            font-size: 1.6em;
+        }
     }
 
     &__card-bottom {
@@ -199,8 +201,8 @@
             height: auto;
         }
 
-        // @media (max-width: 1129.98px) {
-        //     display: none;
-        // }
+        @media (max-width: 575.98px) {
+            display: none;
+        }
     }
 }

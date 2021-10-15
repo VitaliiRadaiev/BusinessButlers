@@ -68,19 +68,32 @@ defer
     <div class="header__body container-lg">
         <div class="header__logo logo">
             <a href="#">
-                <img class="img-svg" src="img/logo/logo.png" alt="logo">
+                <img class="img-svg" src="img/logo/logo.svg" alt="logo">
             </a>
         </div>
         <nav class="header__menu menu">
             <ul class="menu__list">
-                <li>
+                <li class="menu-item-has-children">
                     <a href="#" class="menu__link hover current-menu-item">Size</a>
+                    <ul class="sub-menu">
+                        <li ><a href="#" class="menu__link hover">Small Items</a></li>
+                        <li ><a href="#" class="menu__link hover">Medium Items</a></li>
+                        <li ><a href="#" class="menu__link hover">Large Items</a></li>
+                    </ul>
                 </li>
-                <li>
+                <li class="menu-item-has-children">
                     <a href="#" class="menu__link hover">Speed</a>
+                    <ul class="sub-menu">
+                        <li ><a href="#" class="menu__link hover">Our Service</a></li>
+                    </ul>
                 </li>
-                <li>
+                <li class="menu-item-has-children">
                     <a href="#" class="menu__link hover">Booking</a>
+                    <ul class="sub-menu">
+                        <li ><a href="#" class="menu__link hover">Car Delivery</a></li>
+                        <li ><a href="#" class="menu__link hover">Van Delivery</a></li>
+                        <li ><a href="#" class="menu__link hover">Truck Delivery</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -129,18 +142,18 @@ defer
                 <div class="booking-tabs__body">
                     <div class="booking-tabs__label">The size of my item is best suited for a:</div>
                     <div class="booking-tabs__items">
-                        <div class="booking-tabs__item active">
+                        <a href="#" class="booking-tabs__item active">
                             <span>Car Delivery</span>
                             <img src="img/icons/size-icon-1.svg" alt="" class="img-svg">
-                        </div>
-                        <div class="booking-tabs__item">
+                        </a>
+                        <a href="#" class="booking-tabs__item">
                             <span>Van Delivery</span>
                             <img src="img/icons/size-icon-2.svg" alt="" class="img-svg">
-                        </div>
-                        <div class="booking-tabs__item">
+                        </a>
+                        <a href="#" class="booking-tabs__item ">
                             <span>Truck Delivery</span>
                             <img src="img/icons/size-icon-3.svg" alt="" class="img-svg">
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -196,14 +209,14 @@ defer
                 </div>
                 <div class="b-form__row">
                     <div class="flex flex-md">
-                        <div class="b-form__item width-40">
+                        <!-- <div class="b-form__item width-40">
                             <div class="b-form__label">
                                 Delivery Item
                             </div>
                             <div class="b-form__input">
                                 <input class="input" type="text" placeholder="Insert your item">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="b-form__item width-40">
                             <div class="b-form__label">
                                 Delivery Date
@@ -213,7 +226,21 @@ defer
                                 <img src="img/icons/speed-icon-1.svg" alt="">
                             </div>
                         </div>
-                        <div class="b-form__item flex-shrink-0 width-150px">
+                        <div class="b-form__item">
+                            <div class="b-form__label">
+                                Delivery Date
+                            </div>
+                            <label class="checkbox-radio">
+                                <input type="checkbox" name="heavy" value="35" id="heavy">
+                                <div class="checkbox-radio__square">
+                                    <img src="http://butlers.upro.site/wp-content/themes/butlers/img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    My delivery is heavier than two bags of groceries
+                                </div>
+                            </label>
+                        </div>
+                        <!-- <div class="b-form__item flex-shrink-0 width-150px">
                             <div class="b-form__label">
                                 Quantity
                             </div>
@@ -226,7 +253,7 @@ defer
                                     <img src="img/icons/chevron-down.svg" alt="">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div id="map" class="b-form__map"> </div>
@@ -246,6 +273,9 @@ defer
                                 </div>
                                 <div class="time-frame__radio-title">
                                     Same Day Delivery 
+                                </div>
+                                <div class="time-frame__radio-icon">
+                                    <img src="img/icons/timeframe-icon-1.svg" alt="">
                                 </div>
                                 <div class="time-frame__radio-text">
                                     <p>
@@ -603,7 +633,7 @@ defer
             <div class="footer__col footer__col-1">
                 <div class="footer__logo">
                     <a href="#">
-                        <img src="img/logo/logo.png" alt="">
+                        <img class="img-svg" src="img/logo/logo.svg" alt="">
                     </a>
                 </div>
             </div>

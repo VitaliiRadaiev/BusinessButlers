@@ -2,6 +2,13 @@ let isMobile = { Android: function () { return navigator.userAgent.match(/Androi
 
 let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
 
+// 1) когда выбираешь мультиплай все ок, добавляется еще поле,
+//  но когда возвращаешься снова на сингл то надо это поле убирать,
+//   ну и чистить у него атрибут data-place_name
+
+// 2) Количество адресов также не меняется, меняется только 
+// когда переключил на мултипл. Ну и надо запретить ввод 
+// больше 6. Когда убираем адреса то также чистим атрибут data-place_name
 
 window.addEventListener('load', function () {
 
@@ -51,6 +58,7 @@ window.addEventListener('load', function () {
 	@@include('../common/testimonials/testimonials.js');
 	@@include('../common/questions/questions.js');
 	@@include('../common/file-block/file-block.js');
+	@@include('../common/booking-tabs/booking-tabs.js');
 
 	@@include('../common/popup/popup.js');
 
@@ -82,7 +90,35 @@ window.addEventListener('load', function () {
 		let textItems = bookingOptions.querySelectorAll('.b-form__text');
 		setSameHeight(textItems)
 	}
-	inputOnlyNum()
+	inputOnlyNum();
+
+
+	let infoDeliveringSizesTimaframes = document.querySelectorAll('.info-delivering-sizes__timaframes');
+	if(infoDeliveringSizesTimaframes.length) {
+		infoDeliveringSizesTimaframes.forEach(item => {
+			if(item.children.length > 1) {
+				item.classList.add('multiple');
+			}
+		})
+	}
+
+
+	let servicesDeliverItem = document.querySelectorAll('.services-deliver__item');
+	if(servicesDeliverItem.length) {
+		let allArray = [];
+		for(let i = 0; i <= Math.ceil(servicesDeliverItem.length / 2); i = i + 2) {
+			allArray.push([servicesDeliverItem[i], servicesDeliverItem[i + 1]])
+		}
+		allArray.forEach(arr => {
+			let items = [];
+			arr.forEach(item => {
+				let text = item.querySelector('.services-deliver__item-text');
+				items.push(text);
+			})
+
+			setSameHeight(items);
+		})
+	}
 });
 
 window.addEventListener('DOMContentLoaded', function () {

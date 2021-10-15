@@ -2,6 +2,13 @@ let isMobile = { Android: function () { return navigator.userAgent.match(/Androi
 
 let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
 
+// 1) когда выбираешь мультиплай все ок, добавляется еще поле,
+//  но когда возвращаешься снова на сингл то надо это поле убирать,
+//   ну и чистить у него атрибут data-place_name
+
+// 2) Количество адресов также не меняется, меняется только 
+// когда переключил на мултипл. Ну и надо запретить ввод 
+// больше 6. Когда убираем адреса то также чистим атрибут data-place_name
 
 window.addEventListener('load', function () {
 
@@ -547,7 +554,7 @@ function inputs_init(inputs) {
 				//'+375(99)999-99-99'
 				let maskValue = input.dataset.mask;
 				input.classList.add('_mask');
-				Inputmask('+9(999) 999 9999', {
+				Inputmask('9(999) 999 9999', {
 					//"placeholder": '',
 					clearIncomplete: true,
 					clearMaskOnLostFocus: true,
@@ -789,6 +796,34 @@ if(priceSlider) {
         }, 1000)
         window.addEventListener('resize', setMenuHeight);
         window.addEventListener('scroll', setMenuHeight);
+
+
+
+        let slideItems = header.querySelectorAll('.menu-item-has-children');
+        if(slideItems.length) {
+            slideItems.forEach(item => {
+                let title = item.querySelector('.menu__link');
+                let subMenu = item.querySelector('.sub-menu');
+
+                title.addEventListener('click', (e) => {
+                    if(document.documentElement.clientWidth < 992) {
+                        e.preventDefault();
+                        title.classList.toggle('open');
+                        _slideToggle(subMenu);
+
+                        slideItems.forEach(i => {
+                            if(i === item) return;
+
+                            let title = i.querySelector('.menu__link');
+                            let subMenu = i.querySelector('.sub-menu');
+
+                            title.classList.remove('open');
+                            _slideUp(subMenu);
+                        })
+                    }
+                })                
+            })
+        }
     }
 
 };
@@ -877,6 +912,68 @@ function setrating(th, val) {
             })
         }
     })()
+};
+	{
+    let bookingTabItemsWrap = document.querySelector('.booking-tabs__items');
+    if(bookingTabItemsWrap) {
+        bookingTabHandler(bookingTabItemsWrap)
+    }
+
+    function bookingTabHandler(parent) {
+        const getChildrenCoordinates = (parent, allItems) => {
+            let coordinates = [];
+            let parentCoordinatesLeft =  parent.getBoundingClientRect().left;
+
+            allItems.forEach(item => {
+                coordinates.push(item.getBoundingClientRect().left - parentCoordinatesLeft);
+            })
+            return coordinates;
+        }
+
+        const addSlideLine = (parent) => {
+            let el = document.createElement('div');
+            el.className = 'booking-tabs__items-slide-line';
+            parent.append(el)
+            return el;
+        }
+
+        const setElWidth = (el, width) => {
+            el.style.width = width + 'px';
+        }
+
+        const setElPosition = (el, coordinate) => {
+            el.style.left = coordinate + 'px';
+        }
+
+        let allItems = Array.from(parent.querySelectorAll('.booking-tabs__item'));
+        let itemWidth = allItems[0].clientWidth;
+        let coordinates = getChildrenCoordinates(parent, allItems);
+        let indexActiveElement = allItems.findIndex(item => item.classList.contains('active'));
+        let slideLine = addSlideLine(parent);
+
+        setElWidth(slideLine, itemWidth);
+        setElPosition(slideLine, coordinates[indexActiveElement]);
+
+        const updateData = () => {
+            itemWidth = allItems[0].clientWidth;
+            coordinates = getChildrenCoordinates(parent, allItems);
+            setElWidth(slideLine, itemWidth);
+            setElPosition(slideLine, coordinates[indexActiveElement]);
+        }
+
+        allItems.forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+                setElPosition(slideLine, coordinates[index]);
+            })
+        })
+
+        parent.addEventListener('mouseleave', () => {
+            setElPosition(slideLine, coordinates[indexActiveElement]);
+        })
+
+        window.addEventListener('resize', updateData)
+
+    }
 };
 
 	// ==== Popup form handler====
@@ -1091,58 +1188,84 @@ window.cAlert = (text) => {
         let radioSingleAddressDelivery = deliveryAddressBlock.querySelector('#singleAddressDelivery');
         let radioMultipleAddressDelivery = deliveryAddressBlock.querySelector('#multipleAddressDelivery');
         let pickupAddressInput = deliveryAddressBlock.querySelector('#pickupAddressInput');
+        let deliveryAddressesItems = document.querySelector('#deliveryAddressesItems');
         let multipleAddressInput = deliveryAddressBlock.querySelector('#multipleAddressInput');
+        let multipleAddressBlock = document.querySelector('.multiple-address');
+        let maxItems = 6; 
 
+        if(multipleAddressBlock.children.length) {
+            maxItems = +multipleAddressBlock.children.length;
+        }
 
         if(radioSingleAddressDelivery && radioMultipleAddressDelivery && columnNumber) {
             radioSingleAddressDelivery.addEventListener('change', (e) => {
                 if(e.target.checked) {
                     columnNumber.setAttribute('disabled', '');
-                    setPickupItems(1);
-                    setMultipleItems(1);
+                   // setPickupItems(0);
+                    setMultipleItems(0);
+                    removeAttributeOfMultipleItems('data-place_name');
+                    deliveryAddressesItems.style.display = 'none';
                 }
             })
 
             radioMultipleAddressDelivery.addEventListener('change', (e) => {
                 if(e.target.checked) {
                     columnNumber.removeAttribute('disabled');
-                    setPickupItems(pickupAddressInput.value);
+                    //setPickupItems(pickupAddressInput.value);
                     setMultipleItems(multipleAddressInput.value);
+                    deliveryAddressesItems.style.display = 'block';
                 }
             })
         }
 
-        if(pickupAddressInput && multipleAddressInput) {
-            setPickupItems(pickupAddressInput.value);
-            setMultipleItems(multipleAddressInput.value);
 
-            pickupAddressInput.addEventListener('input', (e) => {
-                if(e.target.value < 1) {
-                    setPickupItems(1);
-                } else {
-                    setPickupItems(pickupAddressInput.value);
-                }
-            })
-            pickupAddressInput.addEventListener('blur', (e) => {
-                if(e.target.value < 1) {
-                    pickupAddressInput.value = 1;
-                } else if(e.target.value > 6) {
-                    pickupAddressInput.value = 6;
-                }
-            })
+        if(multipleAddressInput) {
+            if(radioSingleAddressDelivery.checked) {
+                columnNumber.setAttribute('disabled', '');
+               // setPickupItems(0);
+                setMultipleItems(0);
+            } else {
+               // setPickupItems(pickupAddressInput.value);
+
+                setMultipleItems(multipleAddressInput.value);
+            }
+
+
+            // pickupAddressInput.addEventListener('input', (e) => {
+            //     if(e.target.value < 1) {
+            //         setPickupItems(1);
+            //     } else {
+            //         setPickupItems(pickupAddressInput.value);
+            //     }
+            // })
+            // pickupAddressInput.addEventListener('blur', (e) => {
+            //     if(e.target.value < 1) {
+            //         pickupAddressInput.value = 1;
+            //     } else if(e.target.value > 6) {
+            //         pickupAddressInput.value = 6;
+            //     }
+            // })
 
             multipleAddressInput.addEventListener('input', (e) => {
+                if(!e.target.value.trim()) return;
+
                 if(e.target.value < 1) {
                     setMultipleItems(1);
+                    if(e.target.value < 1 && e.target.value.trim()) {
+                        e.target.value = 1;
+                    }
                 } else {
+                    if(e.target.value > maxItems && e.target.value.trim()) {
+                        e.target.value = maxItems;
+                    }
                     setMultipleItems(multipleAddressInput.value);
                 }
             })
             multipleAddressInput.addEventListener('blur', (e) => {
                 if(e.target.value < 1) {
                     multipleAddressInput.value = 1;
-                } else if(e.target.value > 6) {
-                    multipleAddressInput.value = 6;
+                } else if(e.target.value > maxItems) {
+                    multipleAddressInput.value = maxItems;
                 }
             })
         }
@@ -1162,6 +1285,13 @@ window.cAlert = (text) => {
                 return;
             }
         })
+
+        items.slice(count).forEach(item => {
+            let input = item.querySelector('input[data-place_name]');
+            if(input) {
+                removeAttributeClearValue(input, 'data-place_name');
+            }
+        })
     }
 
     function setPickupItems(count) {
@@ -1175,7 +1305,22 @@ window.cAlert = (text) => {
         setActiveItems(pickupAddress, count);
     }
 
+    function removeAttributeClearValue(input, attributeName) {
+        input.removeAttribute(attributeName);
+        input.value = '';
+    }
 
+    function removeAttributeOfMultipleItems(attributeName) {
+        let pickupAddress = document.querySelector('.multiple-address');
+        if(!pickupAddress) return
+
+        let inputs = pickupAddress.querySelectorAll('input[data-place_name]');
+        if(inputs.length) {
+            inputs.forEach(input => {
+                removeAttributeClearValue(input, attributeName)
+            })
+        }
+    }
 };
 
 
@@ -1201,7 +1346,35 @@ window.cAlert = (text) => {
 		let textItems = bookingOptions.querySelectorAll('.b-form__text');
 		setSameHeight(textItems)
 	}
-	inputOnlyNum()
+	inputOnlyNum();
+
+
+	let infoDeliveringSizesTimaframes = document.querySelectorAll('.info-delivering-sizes__timaframes');
+	if(infoDeliveringSizesTimaframes.length) {
+		infoDeliveringSizesTimaframes.forEach(item => {
+			if(item.children.length > 1) {
+				item.classList.add('multiple');
+			}
+		})
+	}
+
+
+	let servicesDeliverItem = document.querySelectorAll('.services-deliver__item');
+	if(servicesDeliverItem.length) {
+		let allArray = [];
+		for(let i = 0; i <= Math.ceil(servicesDeliverItem.length / 2); i = i + 2) {
+			allArray.push([servicesDeliverItem[i], servicesDeliverItem[i + 1]])
+		}
+		allArray.forEach(arr => {
+			let items = [];
+			arr.forEach(item => {
+				let text = item.querySelector('.services-deliver__item-text');
+				items.push(text);
+			})
+
+			setSameHeight(items);
+		})
+	}
 });
 
 window.addEventListener('DOMContentLoaded', function () {

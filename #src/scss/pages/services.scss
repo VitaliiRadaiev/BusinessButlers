@@ -89,14 +89,11 @@
 
         @media (min-width: 992px) {
             max-width: 515px;
-            margin-bottom: 263px;
         }
     }
 
     &__item-bottom {
         display: flex;
-        margin-top: auto;
-
         @media (max-width: $md3+px) {
             flex-wrap: wrap;
         }

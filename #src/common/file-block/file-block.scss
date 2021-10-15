@@ -1,5 +1,6 @@
 .file-block {
     display: flex;
+    align-items: center;
     cursor: pointer;
     & input[type="file"] {
         display: none;
@@ -10,5 +11,36 @@
         text-align: right;
         margin-right: 20px;
         line-height: 149%;
+    }
+
+    & .link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 54px;
+        padding: 13px 34px;
+        background-color: $textColor;
+        cursor: pointer;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 149%;
+        color: $mainColor;
+        transition: all 0.3s ease;
+        border-radius: 100px;
+
+        border: 1px solid $mainColor;
+
+        @media (max-width: 575.98px) {
+            padding: 8px 24px;
+            min-height: 45px;
+            font-size: 16px;
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: #3b6ca1;
+                color: $textColorLight;
+            }
+        }
     }
 }

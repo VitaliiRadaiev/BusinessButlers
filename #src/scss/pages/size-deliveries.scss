@@ -20,16 +20,16 @@
         padding-bottom: 5.4%;
     }
 
-    &.delivery-timeframes_v2 {
-        & .delivery-timeframes__list {
-            justify-content: center;
+    // &.delivery-timeframes_v2 {
+    //     & .delivery-timeframes__list {
+    //         justify-content: center;
     
-            & > li {
-                flex: 0 1 100%;
-                max-width: 626px;
-            }
-        }
-    }
+    //         & > li {
+    //             flex: 0 1 100%;
+    //             max-width: 626px;
+    //         }
+    //     }
+    // }
 
     & + .process {
         @media (min-width: 992px) {

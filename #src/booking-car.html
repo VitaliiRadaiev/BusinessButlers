@@ -40,18 +40,18 @@
                 <div class="booking-tabs__body">
                     <div class="booking-tabs__label">The size of my item is best suited for a:</div>
                     <div class="booking-tabs__items">
-                        <div class="booking-tabs__item active">
+                        <a href="#" class="booking-tabs__item active">
                             <span>Car Delivery</span>
                             <img src="img/icons/size-icon-1.svg" alt="" class="img-svg">
-                        </div>
-                        <div class="booking-tabs__item">
+                        </a>
+                        <a href="#" class="booking-tabs__item">
                             <span>Van Delivery</span>
                             <img src="img/icons/size-icon-2.svg" alt="" class="img-svg">
-                        </div>
-                        <div class="booking-tabs__item">
+                        </a>
+                        <a href="#" class="booking-tabs__item ">
                             <span>Truck Delivery</span>
                             <img src="img/icons/size-icon-3.svg" alt="" class="img-svg">
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -107,14 +107,14 @@
                 </div>
                 <div class="b-form__row">
                     <div class="flex flex-md">
-                        <div class="b-form__item width-40">
+                        <!-- <div class="b-form__item width-40">
                             <div class="b-form__label">
                                 Delivery Item
                             </div>
                             <div class="b-form__input">
                                 <input class="input" type="text" placeholder="Insert your item">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="b-form__item width-40">
                             <div class="b-form__label">
                                 Delivery Date
@@ -124,7 +124,21 @@
                                 <img src="img/icons/speed-icon-1.svg" alt="">
                             </div>
                         </div>
-                        <div class="b-form__item flex-shrink-0 width-150px">
+                        <div class="b-form__item">
+                            <div class="b-form__label">
+                                Delivery Date
+                            </div>
+                            <label class="checkbox-radio">
+                                <input type="checkbox" name="heavy" value="35" id="heavy">
+                                <div class="checkbox-radio__square">
+                                    <img src="http://butlers.upro.site/wp-content/themes/butlers/img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    My delivery is heavier than two bags of groceries
+                                </div>
+                            </label>
+                        </div>
+                        <!-- <div class="b-form__item flex-shrink-0 width-150px">
                             <div class="b-form__label">
                                 Quantity
                             </div>
@@ -137,7 +151,7 @@
                                     <img src="img/icons/chevron-down.svg" alt="">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div id="map" class="b-form__map"> </div>
@@ -157,6 +171,9 @@
                                 </div>
                                 <div class="time-frame__radio-title">
                                     Same Day Delivery 
+                                </div>
+                                <div class="time-frame__radio-icon">
+                                    <img src="img/icons/timeframe-icon-1.svg" alt="">
                                 </div>
                                 <div class="time-frame__radio-text">
                                     <p>

@@ -68,19 +68,32 @@ defer
     <div class="header__body container-lg">
         <div class="header__logo logo">
             <a href="#">
-                <img class="img-svg" src="img/logo/logo.png" alt="logo">
+                <img class="img-svg" src="img/logo/logo.svg" alt="logo">
             </a>
         </div>
         <nav class="header__menu menu">
             <ul class="menu__list">
-                <li>
+                <li class="menu-item-has-children">
                     <a href="#" class="menu__link hover current-menu-item">Size</a>
+                    <ul class="sub-menu">
+                        <li ><a href="#" class="menu__link hover">Small Items</a></li>
+                        <li ><a href="#" class="menu__link hover">Medium Items</a></li>
+                        <li ><a href="#" class="menu__link hover">Large Items</a></li>
+                    </ul>
                 </li>
-                <li>
+                <li class="menu-item-has-children">
                     <a href="#" class="menu__link hover">Speed</a>
+                    <ul class="sub-menu">
+                        <li ><a href="#" class="menu__link hover">Our Service</a></li>
+                    </ul>
                 </li>
-                <li>
+                <li class="menu-item-has-children">
                     <a href="#" class="menu__link hover">Booking</a>
+                    <ul class="sub-menu">
+                        <li ><a href="#" class="menu__link hover">Car Delivery</a></li>
+                        <li ><a href="#" class="menu__link hover">Van Delivery</a></li>
+                        <li ><a href="#" class="menu__link hover">Truck Delivery</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -362,7 +375,7 @@ defer
                             <input class="input" type="email" placeholder="Your Email">
                         </div>
                         <div class="apply-now-form__item">
-                            <input class="input _mask" type="text" placeholder="Your Phone">
+                            <input class="input" type="text" placeholder="Your Phone">
                         </div>
                         <div class="apply-now-form__item" data-da="apply-now-form__col-2,last,767.98">
                             <button class="btn-default btn-default_dark" type="submit">SUBMIT</button>
@@ -373,6 +386,24 @@ defer
                            <textarea class="textarea" placeholder="Your Message"></textarea>
                         </div>
                         <div class="apply-now-form__group">
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox"  >
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Are you registered for GST
+                                </div>
+                            </label>
+                            <label class="checkbox-radio mb-40px">
+                                <input type="checkbox"  >
+                                <div class="checkbox-radio__square">
+                                    <img src="img/icons/check.svg" alt="">
+                                </div>
+                                <div class="checkbox-radio__text">
+                                    Do you have your own ABN
+                                </div>
+                            </label>
                             <label class="file-block">
                                 <span class="wpcf7-form-control-wrap file-948">
                                     <input type="file" name="file-948" size="40" class="wpcf7-form-control wpcf7-file" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv" aria-invalid="false">
@@ -477,7 +508,7 @@ defer
             <div class="footer__col footer__col-1">
                 <div class="footer__logo">
                     <a href="#">
-                        <img src="img/logo/logo.png" alt="">
+                        <img class="img-svg" src="img/logo/logo.svg" alt="">
                     </a>
                 </div>
             </div>

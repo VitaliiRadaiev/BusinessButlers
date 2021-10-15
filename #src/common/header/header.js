@@ -38,6 +38,34 @@
         }, 1000)
         window.addEventListener('resize', setMenuHeight);
         window.addEventListener('scroll', setMenuHeight);
+
+
+
+        let slideItems = header.querySelectorAll('.menu-item-has-children');
+        if(slideItems.length) {
+            slideItems.forEach(item => {
+                let title = item.querySelector('.menu__link');
+                let subMenu = item.querySelector('.sub-menu');
+
+                title.addEventListener('click', (e) => {
+                    if(document.documentElement.clientWidth < 992) {
+                        e.preventDefault();
+                        title.classList.toggle('open');
+                        _slideToggle(subMenu);
+
+                        slideItems.forEach(i => {
+                            if(i === item) return;
+
+                            let title = i.querySelector('.menu__link');
+                            let subMenu = i.querySelector('.sub-menu');
+
+                            title.classList.remove('open');
+                            _slideUp(subMenu);
+                        })
+                    }
+                })                
+            })
+        }
     }
 
 }
