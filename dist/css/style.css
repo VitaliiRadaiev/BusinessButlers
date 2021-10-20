@@ -3010,12 +3010,14 @@ textarea {
       -ms-flex-align: end;
           align-items: flex-end;
   margin: 0 -3.5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .booking-form__item {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 25%;
-          flex: 0 1 25%;
+      -ms-flex: 0 1 33.3333%;
+          flex: 0 1 33.3333%;
   padding: 0 3.5px;
   margin-bottom: 7px;
   position: relative;
@@ -3033,7 +3035,7 @@ textarea {
   font-size: 15px;
   line-height: 149%;
   color: #949494;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .booking-form__label > strong {
@@ -3537,7 +3539,7 @@ textarea {
 }
 
 .hero.hero_v2 {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .hero.hero_v2:not(.hero-has-form) .hero__bg-layer-1 {
@@ -3557,7 +3559,7 @@ textarea {
 }
 
 .hero.hero_v2.hero-has-form .hero__bg-layer-1 {
-  top: 34px;
+  top: 100px;
 }
 
 .hero.hero_v2.hero-has-form .hero__title {
@@ -4770,6 +4772,403 @@ textarea {
 
 .b-form__row {
   margin-bottom: 33px;
+  position: relative;
+}
+
+.b-form__row:nth-child(1) {
+  z-index: 49;
+}
+
+.b-form__row:nth-child(2) {
+  z-index: 48;
+}
+
+.b-form__row:nth-child(3) {
+  z-index: 47;
+}
+
+.b-form__row:nth-child(4) {
+  z-index: 46;
+}
+
+.b-form__row:nth-child(5) {
+  z-index: 45;
+}
+
+.b-form__row:nth-child(6) {
+  z-index: 44;
+}
+
+.b-form__row:nth-child(7) {
+  z-index: 43;
+}
+
+.b-form__row:nth-child(8) {
+  z-index: 42;
+}
+
+.b-form__row:nth-child(9) {
+  z-index: 41;
+}
+
+.b-form__row:nth-child(10) {
+  z-index: 40;
+}
+
+.b-form__row:nth-child(11) {
+  z-index: 39;
+}
+
+.b-form__row:nth-child(12) {
+  z-index: 38;
+}
+
+.b-form__row:nth-child(13) {
+  z-index: 37;
+}
+
+.b-form__row:nth-child(14) {
+  z-index: 36;
+}
+
+.b-form__row:nth-child(15) {
+  z-index: 35;
+}
+
+.b-form__row:nth-child(16) {
+  z-index: 34;
+}
+
+.b-form__row:nth-child(17) {
+  z-index: 33;
+}
+
+.b-form__row:nth-child(18) {
+  z-index: 32;
+}
+
+.b-form__row:nth-child(19) {
+  z-index: 31;
+}
+
+.b-form__row:nth-child(20) {
+  z-index: 30;
+}
+
+.b-form__row:nth-child(21) {
+  z-index: 29;
+}
+
+.b-form__row:nth-child(22) {
+  z-index: 28;
+}
+
+.b-form__row:nth-child(23) {
+  z-index: 27;
+}
+
+.b-form__row:nth-child(24) {
+  z-index: 26;
+}
+
+.b-form__row:nth-child(25) {
+  z-index: 25;
+}
+
+.b-form__row:nth-child(26) {
+  z-index: 24;
+}
+
+.b-form__row:nth-child(27) {
+  z-index: 23;
+}
+
+.b-form__row:nth-child(28) {
+  z-index: 22;
+}
+
+.b-form__row:nth-child(29) {
+  z-index: 21;
+}
+
+.b-form__row:nth-child(30) {
+  z-index: 20;
+}
+
+.b-form__row:nth-child(31) {
+  z-index: 19;
+}
+
+.b-form__row:nth-child(32) {
+  z-index: 18;
+}
+
+.b-form__row:nth-child(33) {
+  z-index: 17;
+}
+
+.b-form__row:nth-child(34) {
+  z-index: 16;
+}
+
+.b-form__row:nth-child(35) {
+  z-index: 15;
+}
+
+.b-form__row:nth-child(36) {
+  z-index: 14;
+}
+
+.b-form__row:nth-child(37) {
+  z-index: 13;
+}
+
+.b-form__row:nth-child(38) {
+  z-index: 12;
+}
+
+.b-form__row:nth-child(39) {
+  z-index: 11;
+}
+
+.b-form__row:nth-child(40) {
+  z-index: 10;
+}
+
+.b-form__row:nth-child(41) {
+  z-index: 9;
+}
+
+.b-form__row:nth-child(42) {
+  z-index: 8;
+}
+
+.b-form__row:nth-child(43) {
+  z-index: 7;
+}
+
+.b-form__row:nth-child(44) {
+  z-index: 6;
+}
+
+.b-form__row:nth-child(45) {
+  z-index: 5;
+}
+
+.b-form__row:nth-child(46) {
+  z-index: 4;
+}
+
+.b-form__row:nth-child(47) {
+  z-index: 3;
+}
+
+.b-form__row:nth-child(48) {
+  z-index: 2;
+}
+
+.b-form__row:nth-child(49) {
+  z-index: 1;
+}
+
+.b-form__row > div {
+  position: relative;
+}
+
+.b-form__row > div:nth-child(1) {
+  z-index: 49;
+}
+
+.b-form__row > div:nth-child(2) {
+  z-index: 48;
+}
+
+.b-form__row > div:nth-child(3) {
+  z-index: 47;
+}
+
+.b-form__row > div:nth-child(4) {
+  z-index: 46;
+}
+
+.b-form__row > div:nth-child(5) {
+  z-index: 45;
+}
+
+.b-form__row > div:nth-child(6) {
+  z-index: 44;
+}
+
+.b-form__row > div:nth-child(7) {
+  z-index: 43;
+}
+
+.b-form__row > div:nth-child(8) {
+  z-index: 42;
+}
+
+.b-form__row > div:nth-child(9) {
+  z-index: 41;
+}
+
+.b-form__row > div:nth-child(10) {
+  z-index: 40;
+}
+
+.b-form__row > div:nth-child(11) {
+  z-index: 39;
+}
+
+.b-form__row > div:nth-child(12) {
+  z-index: 38;
+}
+
+.b-form__row > div:nth-child(13) {
+  z-index: 37;
+}
+
+.b-form__row > div:nth-child(14) {
+  z-index: 36;
+}
+
+.b-form__row > div:nth-child(15) {
+  z-index: 35;
+}
+
+.b-form__row > div:nth-child(16) {
+  z-index: 34;
+}
+
+.b-form__row > div:nth-child(17) {
+  z-index: 33;
+}
+
+.b-form__row > div:nth-child(18) {
+  z-index: 32;
+}
+
+.b-form__row > div:nth-child(19) {
+  z-index: 31;
+}
+
+.b-form__row > div:nth-child(20) {
+  z-index: 30;
+}
+
+.b-form__row > div:nth-child(21) {
+  z-index: 29;
+}
+
+.b-form__row > div:nth-child(22) {
+  z-index: 28;
+}
+
+.b-form__row > div:nth-child(23) {
+  z-index: 27;
+}
+
+.b-form__row > div:nth-child(24) {
+  z-index: 26;
+}
+
+.b-form__row > div:nth-child(25) {
+  z-index: 25;
+}
+
+.b-form__row > div:nth-child(26) {
+  z-index: 24;
+}
+
+.b-form__row > div:nth-child(27) {
+  z-index: 23;
+}
+
+.b-form__row > div:nth-child(28) {
+  z-index: 22;
+}
+
+.b-form__row > div:nth-child(29) {
+  z-index: 21;
+}
+
+.b-form__row > div:nth-child(30) {
+  z-index: 20;
+}
+
+.b-form__row > div:nth-child(31) {
+  z-index: 19;
+}
+
+.b-form__row > div:nth-child(32) {
+  z-index: 18;
+}
+
+.b-form__row > div:nth-child(33) {
+  z-index: 17;
+}
+
+.b-form__row > div:nth-child(34) {
+  z-index: 16;
+}
+
+.b-form__row > div:nth-child(35) {
+  z-index: 15;
+}
+
+.b-form__row > div:nth-child(36) {
+  z-index: 14;
+}
+
+.b-form__row > div:nth-child(37) {
+  z-index: 13;
+}
+
+.b-form__row > div:nth-child(38) {
+  z-index: 12;
+}
+
+.b-form__row > div:nth-child(39) {
+  z-index: 11;
+}
+
+.b-form__row > div:nth-child(40) {
+  z-index: 10;
+}
+
+.b-form__row > div:nth-child(41) {
+  z-index: 9;
+}
+
+.b-form__row > div:nth-child(42) {
+  z-index: 8;
+}
+
+.b-form__row > div:nth-child(43) {
+  z-index: 7;
+}
+
+.b-form__row > div:nth-child(44) {
+  z-index: 6;
+}
+
+.b-form__row > div:nth-child(45) {
+  z-index: 5;
+}
+
+.b-form__row > div:nth-child(46) {
+  z-index: 4;
+}
+
+.b-form__row > div:nth-child(47) {
+  z-index: 3;
+}
+
+.b-form__row > div:nth-child(48) {
+  z-index: 2;
+}
+
+.b-form__row > div:nth-child(49) {
+  z-index: 1;
 }
 
 .b-form__item {
@@ -4788,6 +5187,20 @@ textarea {
 
 .b-form__item .checkbox-radio {
   min-height: 56px;
+}
+
+.b-form__item .select__title {
+  min-height: 56px;
+  padding-left: 24px;
+}
+
+.b-form__item .select__value::before {
+  right: 21px;
+  top: 19px;
+}
+
+.b-form__item .select._active .select__value:before {
+  top: 27px;
 }
 
 .b-form__label {
@@ -4882,7 +5295,6 @@ textarea {
 .b-form__bottom {
   margin: 0 auto 50px;
   width: 100%;
-  max-width: 990px;
   color: #949494;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4906,6 +5318,7 @@ textarea {
   font-size: 20px;
   line-height: 149%;
   padding-left: 20px;
+  color: #0E2A4E;
 }
 
 .b-form__bottom-text {
@@ -5762,7 +6175,7 @@ textarea {
 }
 
 .about-page .hero.hero_v2 {
-  margin-bottom: 16px;
+  margin-bottom: 50px;
 }
 
 .about {
@@ -5934,7 +6347,7 @@ textarea {
 }
 
 .contact-page .hero.hero_v2 {
-  margin-bottom: 34px;
+  margin-bottom: 50px;
 }
 
 .contact {
@@ -5959,7 +6372,7 @@ textarea {
   font-weight: bold;
   font-size: 36px;
   line-height: 1em;
-  color: #949494;
+  color: #DFBD82;
   margin-bottom: 10px;
 }
 
@@ -6148,7 +6561,7 @@ textarea {
 }
 
 .article-page .hero.hero_v2 {
-  margin-bottom: -3px;
+  margin-bottom: 50px;
 }
 
 .article-page .hero.hero_v2 .hero__text-wrap-col-1 {
@@ -6695,6 +7108,20 @@ textarea {
     fill: #DFBD82;
   }
 
+  .booking-form__item:nth-child(1) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    margin-bottom: 20px;
+  }
+
+  .booking-form__item:nth-child(2) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    margin-bottom: 20px;
+  }
+
   .booking-form__radio-icon:hover {
     background-color: rgba(14, 42, 78, 0.1);
   }
@@ -6893,63 +7320,16 @@ textarea {
 }
 
 @media (max-width: 1324px) {
-  .booking-form__body {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: unset;
-        -ms-flex-align: unset;
-            align-items: unset;
-  }
-
-  .booking-form__item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
-    height: auto;
-  }
-
-  .booking-form__item:not(:last-child) {
-    margin-bottom: 30px;
-  }
-
-  .booking-form__item:nth-child(2) {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .booking-form__item:nth-child(2) .booking-form__input {
-    margin-top: auto;
-  }
-
-  .booking-form__item:last-child {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 100%;
-            flex: 0 1 100%;
-  }
-
-  .booking-form__radio-subtext {
-    position: static;
-    -webkit-transform: translate(0, 0);
-        -ms-transform: translate(0, 0);
-            transform: translate(0, 0);
-    margin-top: 8.5px;
-  }
-
   .hero.hero_v2.hero-has-form .hero__body {
     min-height: 780px;
   }
 
   .hero.hero_v2.hero-has-form .hero__bg-layer-1 {
-    top: 235px;
+    top: 100px;
   }
 
   .hero__bg-layer-1 {
-    top: 235px;
+    top: 100px;
   }
 
   .hero__bg-layer-2 {
@@ -7072,6 +7452,51 @@ textarea {
     max-width: none;
   }
 
+  .booking-form__body {
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+  }
+
+  .booking-form__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    height: auto;
+  }
+
+  .booking-form__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .booking-form__item:nth-child(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .booking-form__item:nth-child(2) .booking-form__input {
+    margin-top: auto;
+  }
+
+  .booking-form__item:last-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .booking-form__radio-subtext {
+    position: static;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+    margin-top: 8.5px;
+  }
+
   .process__list-item {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
@@ -7092,6 +7517,14 @@ textarea {
 
   .hero.hero_v2:not(.hero-has-form) .hero__body {
     min-height: 438px;
+  }
+
+  .hero.hero_v2.hero-has-form .hero__bg-layer-1 {
+    top: 234px;
+  }
+
+  .hero__bg-layer-1 {
+    top: 235px;
   }
 
   .hero__bg-layer-2 {

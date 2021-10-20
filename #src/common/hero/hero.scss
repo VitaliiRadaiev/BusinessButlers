@@ -7,7 +7,7 @@
     }
 
     &.hero_v2 {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
         &:not(.hero-has-form) {
             & .hero__bg-layer-1 {
                 top: 24px;
@@ -52,10 +52,14 @@
             }
 
             & .hero__bg-layer-1 {
-                top: 34px;
+                top: 100px;
 
                 @media (max-width: 1324px) {
-                    top: 235px;
+                    top: 100px;
+                }
+
+                @media (max-width: $md2+px) {
+                    top: 234px;
                 }
 
                 @media (max-width: $md3+px) {
@@ -171,6 +175,10 @@
         }
 
         @media (max-width: 1324px) {
+            top: 100px;
+        }
+
+        @media (max-width: $md2+px) {
             top: 235px;
         }
         @media (max-width: 1200px) {

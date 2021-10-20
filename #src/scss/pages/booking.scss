@@ -6,6 +6,22 @@
     }
     &__row {
         margin-bottom: 33px;
+        position: relative;
+        @for $i from 1 through 49  {
+            &:nth-child(#{$i}) {
+                z-index: 50-$i;
+            }
+        }
+
+        & > div {
+            position: relative;
+
+            @for $i from 1 through 49  {
+                &:nth-child(#{$i}) {
+                    z-index: 50-$i;
+                }
+            }
+        }
     }
 
     &__item {
@@ -16,6 +32,22 @@
 
         & .checkbox-radio {
             min-height: 56px;
+        }
+
+        & .select__title {
+            min-height: 56px;
+            padding-left: 24px;
+        }
+
+        & .select__value {
+            &::before {
+                right: 21px;
+                top: 19px;
+            }
+        }
+
+        & .select._active .select__value:before {
+            top: 27px;
         }
     }
 
@@ -129,7 +161,6 @@
     &__bottom {
         margin: 0 auto 50px;
         width: 100%;
-        max-width: 990px;
         color: #949494;
         display: flex;
         flex-direction: column;
@@ -146,6 +177,7 @@
         font-size: 20px;
         line-height: 149%;
         padding-left: 20px;
+        color: $textColor;
     }
 
     &__bottom-text {

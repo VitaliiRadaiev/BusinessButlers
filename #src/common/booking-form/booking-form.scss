@@ -41,20 +41,31 @@
         display: flex;
         align-items: flex-end;
         margin: 0 -3.5px;
+        flex-wrap: wrap;
 
-        @media (max-width: 1324px) {
-            flex-wrap: wrap;
+        @media (max-width: $md2+px) {
             align-items: unset;
         }
     }
 
     &__item {
-        flex: 0 1 25%;
+        flex: 0 1 33.3333%;
         padding: 0 3.5px;
         margin-bottom: 7px;
         position: relative;
 
-        @media (max-width: 1324px) {
+        @media (min-width: 992px) {
+            &:nth-child(1) {
+                flex: 0 1 50%;
+                margin-bottom: 20px;
+            }
+            &:nth-child(2) {
+                flex: 0 1 50%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: $md2+px) {
             flex: 0 1 50%;
             height: auto;
 
@@ -110,7 +121,7 @@
         font-size: 15px;
         line-height: 149%;
         color: #949494;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
 
         @media (max-width: $md3+px) {
             text-align: center;
@@ -230,7 +241,7 @@
         left: 50%;
         transform: translateX(-50%);
 
-        @media (max-width: 1324px) {
+        @media (max-width: $md2+px) {
             position: static;
             transform: translate(0, 0);
             margin-top: 8.5px;

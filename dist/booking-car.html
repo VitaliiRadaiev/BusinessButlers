@@ -208,7 +208,7 @@ defer
                     </div>
                 </div>
                 <div class="b-form__row">
-                    <div class="flex flex-md">
+                    <div class="flex flex-md flex-wrap">
                         <!-- <div class="b-form__item width-40">
                             <div class="b-form__label">
                                 Delivery Item
@@ -226,9 +226,24 @@ defer
                                 <img src="img/icons/speed-icon-1.svg" alt="">
                             </div>
                         </div>
+                        <div class="b-form__item width-150px">
+                            <div class="select-wrap">
+                                <select name="" class="_select">
+                                    <option value="" selected>Time</option>
+                                    <option value="1">13:30</option>
+                                    <option value="2">14:00</option>
+                                    <option value="3">14:30</option>
+                                    <option value="4">15:00</option>
+                                    <option value="5">15:30</option>
+                                    <option value="6">16:00</option>
+                                    <option value="7">16:30</option>
+                                    <option value="8">17:00</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="b-form__item">
                             <div class="b-form__label">
-                                Delivery Date
+                                Delivery Weight
                             </div>
                             <label class="checkbox-radio">
                                 <input type="checkbox" name="heavy" value="35" id="heavy">
@@ -240,7 +255,16 @@ defer
                                 </div>
                             </label>
                         </div>
-                        <!-- <div class="b-form__item flex-shrink-0 width-150px">
+                        <div class="b-form__item width-50">
+                            <div class="b-form__label">
+                                Description
+                            </div>
+                            <div class="b-form__input">
+                                <textarea  class="textarea" placeholder="Write here..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- <div class="b-form__item flex-shrink-0 width-150px"> 
                             <div class="b-form__label">
                                 Quantity
                             </div>
@@ -253,7 +277,7 @@ defer
                                     <img src="img/icons/chevron-down.svg" alt="">
                                 </div>
                             </div>
-                        </div> -->
+                        </div>  -->
                     </div>
 
                     <div id="map" class="b-form__map"> </div>
